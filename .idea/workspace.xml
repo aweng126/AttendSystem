@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="746535a3-2326-41c9-b0b5-b42ada88ec2b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/AddClassAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/StudentRegisterAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/StudentSignInAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/TeacherRegisterAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/TeacherSignInAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Beans/AcademicYear.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Beans/ClassCource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Beans/Student.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Beans/Teacher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Constants/SqlStatement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils/DB.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils/FormTrans.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/js/subClassRoom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/AddCourseTimeAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Beans/CourseTime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AttendSystem.iml" afterPath="$PROJECT_DIR$/AttendSystem.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/AttendSystem_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/AttendSystem_war_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants/SqlStatement.java" afterPath="$PROJECT_DIR$/src/Constants/SqlStatement.java" />
     </list>
     <ignored path="AttendSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddAcacemicYearAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentRegisterAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Actions/StudentRegisterAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddAcacemicYearAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+            <state relative-caret-position="864">
+              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,11 +49,53 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AddCourseTimeAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Actions/AddCourseTimeAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseTime.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Beans/CourseTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+                <element signature="e#661#662#0" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddClassAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Actions/AddClassAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AcademicYear.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beans/AcademicYear.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="81">
+              <caret line="54" column="13" selection-start-line="38" selection-start-column="5" selection-end-line="54" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +106,8 @@
       <file leaf-file-name="SqlStatement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Constants/SqlStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="112" column="65" selection-start-line="112" selection-start-column="65" selection-end-line="112" selection-end-column="65" />
+            <state relative-caret-position="484">
+              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,9 +150,11 @@
         <option value="$PROJECT_DIR$/src/Utils/FormTrans.java" />
         <option value="$PROJECT_DIR$/src/Utils/DB.java" />
         <option value="$PROJECT_DIR$/src/Beans/EcademicYear.java" />
-        <option value="$PROJECT_DIR$/src/Constants/SqlStatement.java" />
         <option value="$PROJECT_DIR$/src/Beans/AcademicYear.java" />
         <option value="$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java" />
+        <option value="$PROJECT_DIR$/src/Constants/SqlStatement.java" />
+        <option value="$PROJECT_DIR$/src/Beans/CourseTime.java" />
+        <option value="$PROJECT_DIR$/src/Actions/AddCourseTimeAction.java" />
       </list>
     </option>
   </component>
@@ -135,10 +172,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="126" />
+    <option name="y" value="47" />
+    <option name="width" value="1366" />
+    <option name="height" value="721" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -951,15 +988,23 @@
       <workItem from="1475478828730" duration="167000" />
       <workItem from="1475471385750" duration="4636000" />
       <workItem from="1475497638093" duration="5218000" />
-      <workItem from="1475520345382" duration="1774000" />
+      <workItem from="1475520345382" duration="3344000" />
     </task>
+    <task id="LOCAL-00001" summary="academicYear建立成功。登录注册成功，">
+      <created>1475533022502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1475533022502</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18040000" />
+    <option name="totallyTimeSpent" value="19610000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="126" y="47" width="1366" height="721" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -980,10 +1025,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21800947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25037038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1006,6 +1051,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="academicYear建立成功。登录注册成功，" />
+    <option name="LAST_COMMIT_MESSAGE" value="academicYear建立成功。登录注册成功，" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -1015,22 +1064,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Constants/SqlStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/DB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/FormTrans.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1275,6 +1308,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1340,34 +1376,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/AddClassAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/StudentRegisterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Constants/SqlStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="112" column="65" selection-start-line="112" selection-start-column="65" selection-end-line="112" selection-end-column="65" />
+        <state relative-caret-position="484">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beans/CourseTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beans/AcademicYear.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="81">
+          <caret line="54" column="13" selection-start-line="38" selection-start-column="5" selection-end-line="54" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1376,8 +1414,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        <state relative-caret-position="864">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/AddClassAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/StudentRegisterAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/AddCourseTimeAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

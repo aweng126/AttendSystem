@@ -113,4 +113,22 @@ public class SqlStatement {
     public static  final String ACADEMICYEAR_INSERT="insert into academicyear " +
             "value(null,?,?)";
 
+
+    /**
+     * 课程时间的表格 包含周次和节次
+     */
+    public static final String COURSETIME_CREATE="creat table coursetime（ " +
+            " time_id int auto_increment primary key " +
+            "time_week varchar(2) not null " +
+            "time_order varchar(2) not null" +
+            "）";
+    /**
+     * 上课时间进行添加
+     */
+    public static final String COURSETIME_INSERT="insert into coursetime" +
+            " value(null,?,?)";
+
+
+
+
 }
