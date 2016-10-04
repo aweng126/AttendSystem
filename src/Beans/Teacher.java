@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 /**
  * Created by kingwen on 2016/9/13.
+ * 教师 javabean
  */
 public class Teacher {
 

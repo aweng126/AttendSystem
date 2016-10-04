@@ -12,6 +12,7 @@ import java.sql.SQLException;
  * 对于学生实体的javabean
  */
 public class Student  {
+
     private String stuid;
     private String stuname;
     private String stupass;

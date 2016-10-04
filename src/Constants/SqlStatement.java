@@ -118,15 +118,46 @@ public class SqlStatement {
      * 课程时间的表格 包含周次和节次
      */
     public static final String COURSETIME_CREATE="creat table coursetime（ " +
-            " time_id int auto_increment primary key " +
-            "time_week varchar(2) not null " +
-            "time_order varchar(2) not null" +
+            " time_id int auto_increment primary key ," +
+            "time_week varchar(2) not null ," +
+            "time_order varchar(2) not null," +
+            " foreign key (time_order) reference ordertime(order_id)" +
             "）";
     /**
      * 上课时间进行添加
      */
     public static final String COURSETIME_INSERT="insert into coursetime" +
             " value(null,?,?)";
+
+
+    /**
+     * 教室表格
+     */
+    public static final String CLASSROOM_CREATE="create table classroom ( " +
+            "room_id int auto_increment primary key " +
+            "building varchar（12）not null " +
+            "roomnum varchar(6) not null" +
+            ")";
+
+    /**
+     *添加教室
+     */
+
+    public static final String CLASSROOM_INSERT="insert into classroom value(" +
+            "null,?,?)";
+
+
+    /**
+     * 建立ordertime表格并进行数值的设定
+     */
+    public static final String ORDERTIME_CREATE="CREATE TABLE ordertime" +
+            "(order_id VARCHAR(2) PRIMARY KEY ,real_time VARCHAR(12) NOT NULL)";
+
+    public static final String ORDERTIME_INSERT1="INSERT INTO ordertime VALUE('1','8:00——9:50')";
+    public static final String ORDERTIME_INSERT2= "INSERT INTO ordertime VALUE('2','10:10——12:00')";
+    public static final String ORDERTIME_INSERT3= "INSERT INTO ordertime VALUE('3','13:30——15:20')";
+    public static final String ORDERTIME_INSERT4= "INSERT INTO ordertime VALUE('4','15:40——17:30')";
+    public static final String ORDERTIME_INSERT5=  "INSERT INTO ordertime VALUE('5','18:30——20:20')";
 
 
 
