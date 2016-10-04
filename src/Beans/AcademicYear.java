@@ -43,7 +43,6 @@ public class AcademicYear {
             try {
                 conn= DB.getConnection();
                 pStmt=DB.getPStmt(conn, SqlStatement.ACADEMICYEAR_INSERT);
-                System.out.print(ecadyear);
                 pStmt.setString(1,ecadyear);
                 pStmt.setString(2,term);
                 pStmt.executeUpdate();
