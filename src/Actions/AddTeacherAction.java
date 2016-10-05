@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by kingwen on 2016/9/14.
  */
 @WebServlet(urlPatterns = "/tregister",name ="0")
-public class TeacherRegisterAction extends HttpServlet {
+public class AddTeacherAction extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -29,15 +29,14 @@ public class TeacherRegisterAction extends HttpServlet {
         resp.setStatus(200);
     }
 
-    public static void main(String[] args) {
+ /*   public static void main(String[] args) {
         Teacher teacher=new Teacher();
-        teacher.setTeacher_id("0005");
+        teacher.setTeacher_id("0002");
         teacher.setDept_name("软件工程");
         teacher.setTeacher_isadmin("0");
-        teacher.setTeacher_pass("0000");
-        teacher.setTeacher_name("王五");
+        teacher.setTeacher_name("张三");
         System.out.println(teacher.toString());
         teacher.save();
-    }
+    }*/
 
 }

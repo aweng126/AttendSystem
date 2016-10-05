@@ -118,18 +118,35 @@ public class DB {
        return rs;
    }
 
-
-    public static void closeResultSet(Connection conn){
-      if(conn!=null){
+    /**
+     * 关闭结果集
+     * @param rs 需要关掉的结果集
+     */
+    public static void closeRS(ResultSet rs){
+      if(rs!=null){
           try {
-              conn.close();
-              conn=null;
+              rs.close();
+              rs=null;
           } catch (SQLException e) {
               e.printStackTrace();
           }
         }
     }
 
+    /**
+     * 关闭connection
+     * @param conn
+     */
+    public static void closeCon(Connection conn){
+        if(conn!=null){
+            try {
+                conn.close();
+                conn=null;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     /**
      * 通过遍历得到我们resultset结果集中的数目
      * @param rs 我们需要进行计算结果数目的resultset

@@ -47,24 +47,6 @@ public class SqlStatement {
             "class_pweek varchar(2)" +
             "teacher_id varchar(12) " ;
 
-    /**
-     * 老师表格  老师编号  老师姓名  院系  是否为管理员
-     */
-
-    public static final String TEACHER_CREATE="create table teacher (" +
-            "teacher_id varchar(12) primary key " +
-            "teacher_name varchar(12) " +
-            "teacher_pass varchar(12) "+
-            "dept_name varchar(12) " +
-            "teacher_isadmin varchar(1) )" ;
-
-    /**
-     * 教师表格的插入界面，老师注册的时候使用
-     */
-    public static final String TEACHER_INSERT="insert into teacher values(?,?,?,?,?)";
-
-    //教师表格的搜索界面，老师登录的时候使用
-    public static final String TEACHER_SEARCH="select * from student where teacher_id=? and teacher_pass=?";
 
 
     /**

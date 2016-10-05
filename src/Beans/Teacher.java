@@ -1,11 +1,12 @@
 package Beans;
 
+import Constants.TeacherSqlStatement;
 import Utils.DB;
 import Constants.SqlStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kingwen on 2016/9/13.
@@ -15,17 +16,35 @@ public class Teacher {
 
     private String teacher_id;
     private String teacher_name;
-    private String teacher_pass;
+    private String teacher_pass="0000";
     private String teacher_isadmin;
     private String dept_name;
+    private String teacher_sex="男";
 
     public Teacher(){}
-    public Teacher(String teacherid, String teachername,String teacherpass,String teacherisadmin,String teacherdept_name){
-        dept_name=teacherdept_name;
-        teacher_name=teachername;
-        teacher_pass=teacherpass;
-        teacher_isadmin=teacherisadmin;
-        teacher_id=teacherid;
+
+    public Teacher(String teacher_id, String teacher_name, String teacher_isadmin, String dept_name) {
+        this.teacher_id = teacher_id;
+        this.teacher_name = teacher_name;
+        this.teacher_isadmin = teacher_isadmin;
+        this.dept_name = dept_name;
+    }
+
+    public Teacher(String teacher_id, String teacher_name, String teacher_pass, String teacher_isadmin, String dept_name, String teacher_sex) {
+        this.teacher_id = teacher_id;
+        this.teacher_name = teacher_name;
+        this.teacher_pass = teacher_pass;
+        this.teacher_isadmin = teacher_isadmin;
+        this.dept_name = dept_name;
+        this.teacher_sex = teacher_sex;
+    }
+
+    public String getTeacher_sex() {
+        return teacher_sex;
+    }
+
+    public void setTeacher_sex(String teacher_sex) {
+        this.teacher_sex = teacher_sex;
     }
 
     public String getTeacher_pass() {
@@ -68,6 +87,34 @@ public class Teacher {
         this.dept_name = teacher_dept_name;
     }
 
+    public static List<Teacher> getTeachers(){
+        List<Teacher> list=new ArrayList<Teacher>();
+        Connection conn=null;
+        ResultSet rs=null;
+
+        try {
+            conn=DB.getConnection();
+            rs=DB.execteQuery(conn, TeacherSqlStatement.TEACHER_SEARCHALL);
+            while(rs.next()){
+                Teacher teacher=new Teacher();
+                teacher.setTeacher_id(rs.getString("teacher_id"));
+                teacher.setTeacher_name(rs.getString("teacher_name"));
+                teacher.setTeacher_pass(rs.getString("teacher_pass"));
+                teacher.setDept_name(rs.getString("dept_name"));
+                teacher.setTeacher_isadmin(rs.getString("teacher_admin"));
+                teacher.setTeacher_sex(rs.getString("teacher_sex"));
+                list.add(teacher);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+
+        return null;
+    }
+
     public void save(){
         Connection conn=null;
         PreparedStatement pstmt=null;
@@ -75,12 +122,14 @@ public class Teacher {
             try {
 
                 conn= DB.getConnection();
-                    pstmt=DB.getPStmt(conn,SqlStatement.TEACHER_INSERT);
+                    pstmt=DB.getPStmt(conn,Constants.TeacherSqlStatement.TEACHER_INSERT);
                     pstmt.setString(1,teacher_id);
-                    pstmt.setString(2,teacher_name);
-                    pstmt.setString(3,teacher_pass);
+                     pstmt.setString(2,teacher_name);
+                     pstmt.setString(3,teacher_pass);
+
                     pstmt.setString(4,dept_name);
                     pstmt.setString(5,teacher_isadmin);
+                     pstmt.setString(6,teacher_sex);
                     pstmt.executeUpdate();
 
             } catch (SQLException e) {

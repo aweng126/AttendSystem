@@ -1,5 +1,6 @@
 package Actions;
 
+import Constants.TeacherSqlStatement;
 import Utils.DB;
 import Constants.SqlStatement;
 
@@ -55,7 +56,7 @@ public class TeacherSignInAction extends HttpServlet {
         ResultSet rs=null;
         try {
             conn= DB.getConnection();
-            pstmt=DB.getPStmt(conn, SqlStatement.TEACHER_SEARCH) ;
+            pstmt=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_LOGIN) ;
             pstmt.setString(1, id);
             pstmt.setString(2, pass);
             rs=pstmt.executeQuery();
