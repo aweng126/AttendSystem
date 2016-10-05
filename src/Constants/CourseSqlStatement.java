@@ -19,5 +19,11 @@ public class CourseSqlStatement {
  public static final String COURSE_INSERT="insert into course value(?,?,?)";
 
 
+    /**
+     * 选择课程号
+     */
+    public static  final String COURSE_SEARCHAll="select * from course";
+
+
 
 }

@@ -108,6 +108,7 @@ public class DB {
        return rs;
    }
 
+
    public static ResultSet execteQuery(Connection conn,String sql){
        ResultSet rs=null;
        try {

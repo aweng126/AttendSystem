@@ -91,7 +91,6 @@ public class Teacher {
         List<Teacher> list=new ArrayList<Teacher>();
         Connection conn=null;
         ResultSet rs=null;
-
         try {
             conn=DB.getConnection();
             rs=DB.execteQuery(conn, TeacherSqlStatement.TEACHER_SEARCHALL);
@@ -111,8 +110,7 @@ public class Teacher {
             DB.closeRS(rs);
             DB.closeConn(conn);
         }
-
-        return null;
+        return list;
     }
 
     public void save(){

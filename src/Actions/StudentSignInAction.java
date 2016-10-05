@@ -1,7 +1,7 @@
 package Actions;
 
+import Constants.StudentSqlStatement;
 import Utils.DB;
-import Constants.SqlStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -73,7 +73,7 @@ public class StudentSignInAction extends HttpServlet {
         ResultSet rs=null;
         try {
             conn= DB.getConnection();
-            pstmt=DB.getPStmt(conn, SqlStatement.STUDENT_SEARCH) ;
+            pstmt=DB.getPStmt(conn, StudentSqlStatement.STUDENT_LOGIN) ;
             pstmt.setString(1, id);
             pstmt.setString(2, pass);
             rs=pstmt.executeQuery();

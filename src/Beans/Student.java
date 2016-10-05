@@ -1,11 +1,16 @@
 package Beans;
 
+import Constants.StudentSqlStatement;
+import Constants.TeacherSqlStatement;
 import Utils.DB;
 import Constants.SqlStatement;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kingwen on 2016/9/13.
@@ -35,14 +40,8 @@ public class Student  {
         dept_name=deptname;
     }
 
-
-
     public String getStuid() {
         return stuid;
-    }
-
-    public void setStdid(String stdid) {
-        this.stuid = stdid;
     }
 
     public String getStuname() {
@@ -105,7 +104,7 @@ public class Student  {
         PreparedStatement pStmt=null;
         try {
             conn= DB.getConnection();
-            pStmt=DB.getPStmt(conn, SqlStatement.STUDENT_INSERT);
+            pStmt=DB.getPStmt(conn, StudentSqlStatement.STUDENT_INSERT);
             System.out.print(stuid);
             pStmt.setString(1,stuid);
             pStmt.setString(2,stuname);
@@ -122,6 +121,72 @@ public class Student  {
             DB.closeConn(conn);
         }
     }
+
+    public static List<Student>  getAllStudents (String mgrade,String mclass,String mdeptname){
+        List<Student> studentlist=new ArrayList<Student>();
+        Connection conn=null;
+        ResultSet rs=null;
+        try {
+            conn=DB.getConnection();
+            PreparedStatement statement=DB.getPStmt(conn,StudentSqlStatement.STUDENT_SEARCH_WITHGCD);
+            statement.setString(1,mgrade);
+            statement.setString(2,mclass);
+            statement.setString(3,mdeptname);
+
+            rs=statement.executeQuery();
+
+            while(rs.next()){
+                Student student=new Student();
+                student.setStuid(rs.getString("stu_id"));
+                student.setStuname(rs.getString("stu_name"));
+                student.setStupass("****");
+                student.setStusex(rs.getString("stu_sex"));
+                student.setStuclass(rs.getString("stu_class"));
+                student.setStugrade(rs.getString("stu_grade"));
+                student.setDept_name(rs.getString("dept_name"));
+                studentlist.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return studentlist;
+    }
+
+    /**
+     * 得到条件限制的所有学生
+     * @return
+     */
+    public static List<Student>  getStudentsWithGCD (){
+        List<Student> studentlist=new ArrayList<Student>();
+        Connection conn=null;
+        ResultSet rs=null;
+        try {
+            conn=DB.getConnection();
+            rs=DB.execteQuery(conn, StudentSqlStatement.STUDENT_SEARCH_WITHGCD);
+            while(rs.next()){
+
+                Student student=new Student();
+                student.setStuid(rs.getString("stu_id"));
+                student.setStuname(rs.getString("stu_name"));
+                student.setStupass("****");
+                student.setStusex(rs.getString("stu_sex"));
+                student.setStuclass(rs.getString("stu_class"));
+                student.setStugrade(rs.getString("stu_grade"));
+                student.setDept_name(rs.getString("dept_name"));
+                studentlist.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return studentlist;
+    }
+
 
     @Override
     public String toString() {

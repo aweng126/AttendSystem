@@ -6,32 +6,7 @@ package Constants;
  */
 public class SqlStatement {
 
-    /**
-     * 关于student表格
-     */
-    public static final String STUDNET_CREATE=
-            "creat table student " +
-                    "stu_id varchar(12) primary key " +
-                    "stu_name varchar(10) not null " +
-                    "stu_pass varchar(10) not null " +
-                    "stu_sex varchar(10) not null " +
-                    "stu_class varchar(10) not null " +
-                    "stu_grade varchar(10) not null " +
-                    "dept_name varchar(10) not null ";
 
-    public static void main(String[] args) {
-        System.out.print(STUDNET_CREATE);
-    }
-
-    /**
-     * student插入
-     */
-   public static final String STUDENT_INSERT="insert into student values(?,?,?,?,?,?,?)";
-
-    /**
-     * student登录
-     */
-  public static final String STUDENT_SEARCH="select * from student where stu_id=? and stu_pass=?";
 
 
     /**

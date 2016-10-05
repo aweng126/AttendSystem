@@ -1,11 +1,15 @@
 package Beans;
 
 import Constants.SqlStatement;
+import Constants.CourseSqlStatement;
 import Utils.DB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kingwen on 2016/10/4.
@@ -20,6 +24,7 @@ public class Course {
     //课程学分
     private int course_credit;
 
+    public Course(){}
     public Course(String course_id, String course_name, int course_credit) {
         this.course_id = course_id;
         this.course_name = course_name;
@@ -68,6 +73,31 @@ public class Course {
         }
     }
 
+    public static List<Course> getAllCourses(){
+        List<Course> list=new ArrayList<Course>();
+        Connection conn=null;
+        ResultSet rs=null;
+        try {
+            conn=DB.getConnection();
+            rs=DB.execteQuery(conn, CourseSqlStatement.COURSE_SEARCHAll);
+            while(rs.next()){
+                Course course=new Course();
+                course.setCourse_id(rs.getString("course_id"));
+                course.setCourse_credit(rs.getInt("course_credit"));
+                course.setCourse_name(rs.getString("course_name"));
+                list.add(course);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return list;
+    }
+    
+    
+    
     @Override
     public String toString() {
         return "Course{" +
