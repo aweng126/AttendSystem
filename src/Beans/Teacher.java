@@ -100,7 +100,7 @@ public class Teacher {
                 teacher.setTeacher_name(rs.getString("teacher_name"));
                 teacher.setTeacher_pass(rs.getString("teacher_pass"));
                 teacher.setDept_name(rs.getString("dept_name"));
-                teacher.setTeacher_isadmin(rs.getString("teacher_admin"));
+                teacher.setTeacher_isadmin(rs.getString("teacher_isadmin"));
                 teacher.setTeacher_sex(rs.getString("teacher_sex"));
                 list.add(teacher);
             }

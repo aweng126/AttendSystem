@@ -1,6 +1,6 @@
 package Actions;
 
-import Beans.Teacher;
+import Beans.ClassRoom;
 import net.sf.json.JSONArray;
 
 import javax.servlet.ServletException;
@@ -14,8 +14,9 @@ import java.util.List;
 /**
  * Created by kingwen on 2016/10/5.
  */
-@WebServlet(urlPatterns = "/adminGetTeacherList")
-public class GetTeacherListAction extends HttpServlet {
+
+@WebServlet(urlPatterns = "/adminGetClassRoomList")
+public class GetClassRoomListAction extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -23,9 +24,12 @@ public class GetTeacherListAction extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        List<Teacher> list=Teacher.getTeachers();
+        List<ClassRoom> list=ClassRoom.getAllClassRooms();
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
 
+    public static void main(String[] args) {
+        List<ClassRoom> list=ClassRoom.getAllClassRooms();
+        System.out.println(JSONArray.fromObject(list).toString());
+    }
 }
