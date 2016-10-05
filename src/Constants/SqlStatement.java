@@ -54,13 +54,7 @@ public class SqlStatement {
             "foreign key(class_id) reference class";
 
 
-    /**
-     * 建立学年信息表格
-     */
-    public static final String ACADEMICYEAR_CREATE="create table academicyear (" +
-            "ecadyear_id  int auto_increment primary key ," +
-            "ecadyear varchar(12) not null, " +
-            "term varchar(2) not null )";
+
 
     /**
      * 将学年信息插入数据库

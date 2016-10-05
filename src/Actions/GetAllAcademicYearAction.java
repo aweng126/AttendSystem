@@ -1,7 +1,9 @@
 package Actions;
 
-import Beans.Teacher;
+import Beans.AcademicYear;
+import jdk.nashorn.internal.parser.JSONParser;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +16,8 @@ import java.util.List;
 /**
  * Created by kingwen on 2016/10/5.
  */
-@WebServlet(urlPatterns = "/adminGetTeacherList")
-public class GetTeacherListAction extends HttpServlet {
+@WebServlet(urlPatterns = "/adminGetAcademicYearList" )
+public class GetAllAcademicYearAction extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -23,14 +25,13 @@ public class GetTeacherListAction extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        List<Teacher> list=Teacher.getTeachers();
+        List<AcademicYear> list=AcademicYear.getAllAcademicYears();
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
 
-
-    public static void main(String[] args) {
-        List<Teacher> list=Teacher.getTeachers();
+   /* public static void main(String[] args) {
+        List<AcademicYear> list=AcademicYear.getAllAcademicYears();
         System.out.println(JSONArray.fromObject(list).toString());
-    }
+    }*/
+
 }

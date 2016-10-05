@@ -1,17 +1,31 @@
 package Beans;
 
+import Constants.AcademicYearSqlStatement;
 import Constants.SqlStatement;
 import Utils.DB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kingwen on 2016/10/4.
  * 这个类是学年的bean。
  */
 public class AcademicYear {
+
+    public String getYearid() {
+        return yearid;
+    }
+
+    public void setYearid(String yearid) {
+        this.yearid = yearid;
+    }
+
+    private String yearid;
     /**
      * 学年 如14-15学年
       */
@@ -22,10 +36,15 @@ public class AcademicYear {
     private String term;
 
     /**
+     * 无参构造方法
+     */
+    public AcademicYear(){}
+    /**
      * 构造方法
      * @param ecadyear 学年
      * @param term 学期
      */
+
     public AcademicYear(String ecadyear, String term) {
         this.ecadyear = ecadyear;
         this.term = term;
@@ -53,6 +72,29 @@ public class AcademicYear {
                 DB.closeConn(conn);
             }
 
+    }
+
+    public static List<AcademicYear> getAllAcademicYears(){
+        List<AcademicYear> list=new ArrayList<AcademicYear>();
+        Connection conn=null;
+        ResultSet rs=null;
+        try {
+            conn=DB.getConnection();
+            rs=DB.execteQuery(conn, AcademicYearSqlStatement.ACADEMICYEAR_SEARCHALL);
+            while(rs.next()){
+                AcademicYear year=new AcademicYear();
+                 year.setYearid(rs.getString("acadyear_id"));
+                year.setEcadyear(rs.getString("acadyear"));
+                year.setTerm(rs.getString("term"));
+                list.add(year);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return list;
     }
 
     @Override
