@@ -13,10 +13,20 @@ import java.sql.Statement;
  */
 public class Teacher {
 
-    private boolean isfirst=true;
     private String teacher_id;
     private String teacher_name;
     private String teacher_pass;
+    private String teacher_isadmin;
+    private String dept_name;
+
+    public Teacher(){}
+    public Teacher(String teacherid, String teachername,String teacherpass,String teacherisadmin,String teacherdept_name){
+        dept_name=teacherdept_name;
+        teacher_name=teachername;
+        teacher_pass=teacherpass;
+        teacher_isadmin=teacherisadmin;
+        teacher_id=teacherid;
+    }
 
     public String getTeacher_pass() {
         return teacher_pass;
@@ -26,16 +36,6 @@ public class Teacher {
         this.teacher_pass = teacher_pass;
     }
 
-    private String teacher_isadmin;
-    private String dept_name;
-    public Teacher(){}
-    public Teacher(String teacherid, String teachername,String teacherpass,String teacherisadmin,String teacherdept_name){
-        dept_name=teacherdept_name;
-        teacher_name=teachername;
-        teacher_pass=teacherpass;
-        teacher_isadmin=teacherisadmin;
-        teacher_id=teacherid;
-    }
     public String getTeacher_id() {
         return teacher_id;
     }
@@ -75,22 +75,28 @@ public class Teacher {
             try {
 
                 conn= DB.getConnection();
-                if(isfirst) {
-                    statement = DB.getStmt(conn);
-                    statement.execute(SqlStatement.TEACHER_CREATE);
-                }else{
-                    pstmt=DB.getPStmt(conn,SqlStatement.STUDENT_INSERT);
+                    pstmt=DB.getPStmt(conn,SqlStatement.TEACHER_INSERT);
                     pstmt.setString(1,teacher_id);
                     pstmt.setString(2,teacher_name);
                     pstmt.setString(3,teacher_pass);
-                    pstmt.setString(4,teacher_isadmin);
-                    pstmt.setString(5,dept_name);
+                    pstmt.setString(4,dept_name);
+                    pstmt.setString(5,teacher_isadmin);
                     pstmt.executeUpdate();
-                }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
     };
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacher_id='" + teacher_id + '\'' +
+                ", teacher_name='" + teacher_name + '\'' +
+                ", teacher_pass='" + teacher_pass + '\'' +
+                ", teacher_isadmin='" + teacher_isadmin + '\'' +
+                ", dept_name='" + dept_name + '\'' +
+                '}';
+    }
 }

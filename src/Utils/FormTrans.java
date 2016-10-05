@@ -36,10 +36,11 @@ public class FormTrans {
     public static Teacher getTeacher(HttpServletRequest request){
         Teacher teacher=null;
         String teacher_id=request.getParameter("teacher_id");
-        String teacher_name=request.getParameter("teacher_id");
+        String teacher_name=request.getParameter("teacher_name");
         String teacher_pass=request.getParameter("teacher_pass");
         String dept_name=request.getParameter("dept_name");
-        teacher=new Teacher(teacher_id,teacher_name,teacher_pass,"0",dept_name);
+        String teacher_isadmin=request.getParameter("teacher_isadmin");
+        teacher=new Teacher(teacher_id,teacher_name,teacher_pass,teacher_isadmin,dept_name);
         return teacher;
     }
 

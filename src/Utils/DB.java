@@ -29,7 +29,8 @@ public class DB {
     public static Connection getConnection(){
         Connection conn=null;
         try {
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/sqldesign?user=root&password=mysql&serverTimezone=GMT");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/sqldesign?user=root&password=mysql" +
+                    "&serverTimezone=GMT&&useUnicode=true&characterEncoding=UTF8");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -106,6 +107,18 @@ public class DB {
        }
        return rs;
    }
+
+   public static ResultSet execteQuery(Connection conn,String sql){
+       ResultSet rs=null;
+       try {
+           rs=conn.createStatement().executeQuery(sql);
+       } catch (SQLException e) {
+           e.printStackTrace();
+       }
+       return rs;
+   }
+
+
     public static void closeResultSet(Connection conn){
       if(conn!=null){
           try {

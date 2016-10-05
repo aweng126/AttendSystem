@@ -61,12 +61,10 @@ public class SqlStatement {
     /**
      * 教师表格的插入界面，老师注册的时候使用
      */
-    public static final String TEACHER_INSERT="insert table teacher values(?,?,?,?,null)";
+    public static final String TEACHER_INSERT="insert into teacher values(?,?,?,?,?)";
 
     //教师表格的搜索界面，老师登录的时候使用
     public static final String TEACHER_SEARCH="select * from student where teacher_id=? and teacher_pass=?";
-
-
 
 
     /**

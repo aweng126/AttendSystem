@@ -28,4 +28,16 @@ public class TeacherRegisterAction extends HttpServlet {
         System.out.println("teacher save");
         resp.setStatus(200);
     }
+
+    public static void main(String[] args) {
+        Teacher teacher=new Teacher();
+        teacher.setTeacher_id("0005");
+        teacher.setDept_name("软件工程");
+        teacher.setTeacher_isadmin("0");
+        teacher.setTeacher_pass("0000");
+        teacher.setTeacher_name("王五");
+        System.out.println(teacher.toString());
+        teacher.save();
+    }
+
 }
