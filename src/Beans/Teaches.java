@@ -20,7 +20,10 @@ public class Teaches  {
 
     public Teaches(){}
 
-
+    public Teaches(String teaches_id, String course_id) {
+        this.teaches_id = teaches_id;
+        this.course_id = course_id;
+    }
 
     public String getTeaches_id() {
         return teaches_id;
@@ -70,14 +73,29 @@ public class Teaches  {
         this.acadyear_id = acadyear_id;
     }
 
+public void delete(){
+    Connection conn=null;
+    PreparedStatement pstmt=null;
+    Statement statement=null;
+    try {
+        conn= DB.getConnection();
+        pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_DELETE);
 
+        pstmt.setString(1,teaches_id);
+        pstmt.setString(2,course_id);
+
+        pstmt.executeUpdate();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
 
     public void save(){
         Connection conn=null;
         PreparedStatement pstmt=null;
         Statement statement=null;
         try {
-
             conn= DB.getConnection();
             pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_INSERT);
 

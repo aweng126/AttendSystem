@@ -31,4 +31,9 @@ public class TeachesSqlStatement {
 
      public static final String TEACHES_SEARCHALL="select * from teaches natural join teacher natural join course natural join classroom ";
 
+
+    /**
+     * 删除查询信息
+     */
+    public static final String TEACHES_DELETE="delete from teaches where teacher_id=? and course_id=? ";
 }

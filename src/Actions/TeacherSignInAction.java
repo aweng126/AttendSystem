@@ -6,6 +6,7 @@ import Constants.SqlStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +19,7 @@ import java.sql.SQLException;
 /**
  * Created by kingwen on 2016/9/14.
  */
-@WebServlet(urlPatterns = "teachersignin",name = "0")
+@WebServlet(urlPatterns = "tlogin",name = "0")
 public class TeacherSignInAction extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,8 +38,19 @@ public class TeacherSignInAction extends HttpServlet {
          * 如果登录成功，那么进入主界面
          */
         if(islegal(teacher_id,teacher_pass)){
+
+            resp.getWriter().write(1);
+            /**
+             * 设置cookie
+             */
+            Cookie cookie=new Cookie("teacher_id",teacher_id);
+            cookie.setMaxAge(1000000000);
+            resp.addCookie(cookie);
+
             resp.sendRedirect("/");
             resp.sendRedirect(req.getContextPath() + "/index.html");
+        }else {
+            resp.getWriter().write(0);
         }
     }
 

@@ -19,7 +19,7 @@ import java.sql.SQLException;
  * Created by kingwen on 2016/9/13.
  */
 
-@WebServlet(urlPatterns = "/stusignin",name = "o")
+@WebServlet(urlPatterns = "/stulogin",name = "o")
 public class StudentSignInAction extends HttpServlet {
 
    private boolean islegal=false;
@@ -32,7 +32,7 @@ public class StudentSignInAction extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
 
-         //得到cookie从而判断我们的用户名和密码
+   /*      //得到cookie从而判断我们的用户名和密码
         Cookie cookie[]=req.getCookies();
         String id ="";
         String pass="";
@@ -49,15 +49,26 @@ public class StudentSignInAction extends HttpServlet {
                     //donothing
             }
             System.out.print(i.toString().trim());
-        }
+        }*/
+
+   String id=req.getParameter("stu_id");
+        String pass=req.getParameter("stu_pass");
+
 
         /**
          * 如果登录成功，那么进入主界面
          */
         if(islegal(id,pass)){
            resp.sendRedirect("/");
+
+            Cookie cookie=new Cookie("stu_id",id);
+            cookie.setMaxAge(100000000);
+            resp.addCookie(cookie);
+
             resp.sendRedirect(req.getContextPath() + "/index.html");
         }
+
+
     }
 
     /**

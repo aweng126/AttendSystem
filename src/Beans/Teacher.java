@@ -94,19 +94,8 @@ public class Teacher {
         try {
             conn=DB.getConnection();
             rs=DB.execteQuery(conn, TeacherSqlStatement.TEACHER_SEARCHALL);
-            while(rs.next()){
-                Teacher teacher=new Teacher();
-                teacher.setTeacher_id(rs.getString("teacher_id"));
-                teacher.setTeacher_name(rs.getString("teacher_name"));
-                teacher.setTeacher_pass(rs.getString("teacher_pass"));
-                teacher.setDept_name(rs.getString("dept_name"));
-                teacher.setTeacher_isadmin(rs.getString("teacher_isadmin"));
-                teacher.setTeacher_sex(rs.getString("teacher_sex"));
-                list.add(teacher);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally{
+            list=getTeacherInfoFromRS(rs);
+        } finally{
             DB.closeRS(rs);
             DB.closeConn(conn);
         }
@@ -135,6 +124,49 @@ public class Teacher {
             }
 
     };
+
+
+    public static  List<Teacher> getTeacherInfo(String t_id){
+        List<Teacher> list=new ArrayList<Teacher>();
+        Connection conn=null;
+        ResultSet rs=null;
+        PreparedStatement pstmt=null;
+        try {
+            conn=DB.getConnection();
+            pstmt=DB.getPStmt(conn,Constants.TeacherSqlStatement.TEACHER_SEARCHWITHID);
+            pstmt.setString(1,t_id);
+            rs=pstmt.executeQuery();
+            list=getTeacherInfoFromRS(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return list;
+
+
+    }
+
+    private  static  List<Teacher> getTeacherInfoFromRS(ResultSet rs){
+        List<Teacher> list=new ArrayList<Teacher>();
+        try {
+            while(rs.next()){
+                Teacher teacher=new Teacher();
+                teacher.setTeacher_id(rs.getString("teacher_id"));
+                teacher.setTeacher_name(rs.getString("teacher_name"));
+                teacher.setTeacher_pass(rs.getString("teacher_pass"));
+                teacher.setDept_name(rs.getString("dept_name"));
+                teacher.setTeacher_isadmin(rs.getString("teacher_isadmin"));
+                teacher.setTeacher_sex(rs.getString("teacher_sex"));
+                list.add(teacher);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    return  list;
+    }
+
 
     @Override
     public String toString() {

@@ -26,4 +26,9 @@ public class TeacherSqlStatement {
 
     //获得教师的所有数据
     public static final String TEACHER_SEARCHALL="select * from teacher";
+
+    /**
+     * 获得老师个人信息
+     */
+    public  static final String TEACHER_SEARCHWITHID="select * from teacher where teacher_id=?";
 }
