@@ -2,6 +2,7 @@ package Actions;
 
 import Beans.Teacher;
 import Beans.Teaches;
+import Utils.CookieDetail;
 import net.sf.json.JSONArray;
 
 import javax.servlet.ServletException;
@@ -27,12 +28,8 @@ public class GetTeacherInfo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String teacher_id=null;
-        Cookie[] cookie=req.getCookies();
-        for(Cookie cookie1:cookie){
-            if(cookie1.getName().equals("teacher_id")){
-                 teacher_id=cookie1.getValue();
-            }
-        }
+
+        teacher_id= CookieDetail.getTeacherIdFromReq(req);
 
       List<Teacher> theTeacher= Teacher.getTeacherInfo(teacher_id);
 

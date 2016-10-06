@@ -121,10 +121,33 @@ public class Teacher {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
+            }finally {
+                DB.closeStmt(pstmt);
+                DB.closeConn(conn);
 
+            }
     };
 
+    public static  int changePass(String tid,String newpass){
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        Statement statement=null;
+        try {
+
+            conn= DB.getConnection();
+            pstmt=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_CHANGEPASS);
+            pstmt.setString(1,newpass);
+            pstmt.setString(2,tid);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }finally {
+            DB.closeStmt(pstmt);
+            DB.closeConn(conn);
+        }
+        return 1;
+    };
 
     public static  List<Teacher> getTeacherInfo(String t_id){
         List<Teacher> list=new ArrayList<Teacher>();
@@ -144,8 +167,6 @@ public class Teacher {
             DB.closeConn(conn);
         }
         return list;
-
-
     }
 
     private  static  List<Teacher> getTeacherInfoFromRS(ResultSet rs){

@@ -31,4 +31,11 @@ public class TeacherSqlStatement {
      * 获得老师个人信息
      */
     public  static final String TEACHER_SEARCHWITHID="select * from teacher where teacher_id=?";
+
+    /**
+     * 修改密码
+     */
+
+    public static final String TEACHER_CHANGEPASS="update teacher set teacher_pass = ? where teacher_id = ? ";
+
 }
