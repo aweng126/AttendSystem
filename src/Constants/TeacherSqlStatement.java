@@ -67,4 +67,14 @@ public class TeacherSqlStatement {
             " natural join classroom natural join coursetime natural join ordertime natural join teacher natural join course  natural join (" +
             "select * from  teaches where teacher_id=? and course_id=? ) a";
 
+
+    /**
+     * 查看选课学生
+     */
+
+    public static final String TEACHER_CHECKSTUDENT ="select student.stu_id,stu_name,stu_sex,stu_class,stu_grade,dept_name  from  student , " +
+            "takes where takes.course_id=? and takes.stu_id=student.stu_id ";
+
+
+
 }

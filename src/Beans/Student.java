@@ -122,7 +122,7 @@ public class Student  {
         }
     }
 
-    public static List<Student>  getAllStudents (String mgrade,String mclass,String mdeptname){
+    public static List<Student>  getStudentsWithGCD (String mgrade,String mclass,String mdeptname){
         List<Student> studentlist=new ArrayList<Student>();
         Connection conn=null;
         ResultSet rs=null;
@@ -159,7 +159,7 @@ public class Student  {
      * 得到条件限制的所有学生
      * @return
      */
-    public static List<Student>  getStudentsWithGCD (){
+    public static List<Student>  getAllStudents(){
         List<Student> studentlist=new ArrayList<Student>();
         Connection conn=null;
         ResultSet rs=null;
@@ -186,6 +186,9 @@ public class Student  {
         }
         return studentlist;
     }
+
+
+
 
 
     @Override

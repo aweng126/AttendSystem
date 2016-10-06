@@ -1,5 +1,6 @@
 package Beans;
 
+import Constants.StudentSqlStatement;
 import Constants.TeacherSqlStatement;
 import Utils.DB;
 import Constants.SqlStatement;
@@ -187,6 +188,36 @@ public class Teacher {
         }
     return  list;
     }
+
+    public static List<Student>  getStudentsWithCourse (String courseid){
+        List<Student> studentlist=new ArrayList<Student>();
+        Connection conn=null;
+        ResultSet rs=null;
+        try {
+            conn=DB.getConnection();
+            PreparedStatement statement=DB.getPStmt(conn,TeacherSqlStatement.TEACHER_CHECKSTUDENT);
+            statement.setString(1,courseid);
+            rs=statement.executeQuery();
+            while(rs.next()){
+                Student student=new Student();
+                student.setStuid(rs.getString("stu_id"));
+                student.setStuname(rs.getString("stu_name"));
+                student.setStupass("****");
+                student.setStusex(rs.getString("stu_sex"));
+                student.setStuclass(rs.getString("stu_class"));
+                student.setStugrade(rs.getString("stu_grade"));
+                student.setDept_name(rs.getString("dept_name"));
+                studentlist.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return studentlist;
+    }
+
 
     @Override
     public String toString() {
