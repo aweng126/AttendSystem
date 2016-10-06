@@ -80,14 +80,15 @@ public void delete(){
     try {
         conn= DB.getConnection();
         pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_DELETE);
-
         pstmt.setString(1,teaches_id);
         pstmt.setString(2,course_id);
-
         pstmt.executeUpdate();
 
     } catch (SQLException e) {
         e.printStackTrace();
+    }finally {
+        DB.closeStmt(pstmt);
+        DB.closeConn(conn);
     }
 }
 
@@ -108,6 +109,9 @@ public void delete(){
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            DB.closeStmt(pstmt);
+            DB.closeConn(conn);
         }
 
     };
