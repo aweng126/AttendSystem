@@ -188,7 +188,6 @@ public class Teacher {
     return  list;
     }
 
-
     @Override
     public String toString() {
         return "Teacher{" +
@@ -198,5 +197,31 @@ public class Teacher {
                 ", teacher_isadmin='" + teacher_isadmin + '\'' +
                 ", dept_name='" + dept_name + '\'' +
                 '}';
+    }
+
+    public static List<Course> getMyTeach(String teacherid) {
+        List<Course> courses=new ArrayList<Course>();
+        Connection conn=null;
+        ResultSet rs=null;
+        PreparedStatement pstmt=null;
+        try {
+            conn=DB.getConnection();
+            pstmt=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_GETMTEACH);
+            pstmt.setString(1,teacherid);
+            rs=pstmt.executeQuery();
+            while (rs.next()){
+                Course course=new Course();
+                course.setCourse_id(rs.getString("course_id"));
+                course.setCourse_name(rs.getString("course_name"));
+                course.setCourse_credit(rs.getInt("course_credit"));
+                courses.add(course);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return courses;
     }
 }

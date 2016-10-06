@@ -22,6 +22,8 @@ public class CourseTime  {
      */
     private String order;
 
+
+    public CourseTime(){}
     public CourseTime(String week, String order) {
         this.week = week;
         this.order = order;
