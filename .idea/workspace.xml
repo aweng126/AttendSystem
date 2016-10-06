@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="746535a3-2326-41c9-b0b5-b42ada88ec2b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/TDeleteStudentAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Beans/Takes.java" />
+    <list default="true" id="746535a3-2326-41c9-b0b5-b42ada88ec2b" name="Default" comment="二维码 生成代码 插入成功">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/zxing-code-2.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_6_0_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils/MatrixToImageWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils/QRCodeFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils/QrTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lombok_1_16_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lombok_1_16_10.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/TAddScoreAction.java" afterPath="$PROJECT_DIR$/src/Actions/TAddScoreAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Beans/Teaches.java" afterPath="$PROJECT_DIR$/src/Beans/Teaches.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants/TakesSqlStatement.java" afterPath="$PROJECT_DIR$/src/Constants/TakesSqlStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AttendSystem.iml" afterPath="$PROJECT_DIR$/AttendSystem.iml" />
     </list>
     <ignored path="AttendSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,10 +43,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TDeleteStudentAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TDeleteStudentAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Actions/TDeleteStudentAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
+            <state relative-caret-position="442">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixToImageWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/MatrixToImageWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1323">
+              <caret line="49" column="82" selection-start-line="49" selection-start-column="82" selection-end-line="49" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QRCodeFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/QRCodeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2973#2997#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QrTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Utils/QrTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
               <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -144,9 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/js/subClassRoom.js.xhtml" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/js/subClassRoom.js" />
         <option value="$PROJECT_DIR$/src/Actions/StudentRegisterAction.java" />
         <option value="$PROJECT_DIR$/src/Beans/EcademicYear.java" />
         <option value="$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java" />
@@ -195,6 +231,9 @@
         <option value="$PROJECT_DIR$/src/Beans/Takes.java" />
         <option value="$PROJECT_DIR$/src/Actions/TAddScoreAction.java" />
         <option value="$PROJECT_DIR$/src/Actions/TDeleteStudentAction.java" />
+        <option value="$PROJECT_DIR$/src/Utils/MatrixToImageWriter.java" />
+        <option value="$PROJECT_DIR$/src/Utils/QRCodeFactory.java" />
+        <option value="$PROJECT_DIR$/src/Utils/QrTest.java" />
       </list>
     </option>
   </component>
@@ -479,9 +518,15 @@
               <option name="myItemId" value="AttendSystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+              <option name="myItemId" value="AttendSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AttendSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -491,6 +536,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AttendSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -587,16 +636,23 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/lombok-1.16.10.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-6.0.4.jar!/" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workplace\Intellijava\AttendSystem\web\WEB-INF\js" />
+      <recent name="D:\workplace\Intellijava\AttendSystem\web\WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Constants" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workplace\Intellijava\AttendSystem\web\WEB-INF\lib" />
       <recent name="D:\workplace\Intellijava\AttendSystem\src\Utils" />
@@ -604,35 +660,8 @@
       <recent name="D:\workplace\Intellijava\AttendSystem\src\Actions" />
       <recent name="D:\workplace\Intellijava\AttendSystem\web\WEB-INF\js" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Constants" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workplace\Intellijava\AttendSystem\web\WEB-INF\js" />
-      <recent name="D:\workplace\Intellijava\AttendSystem\web\WEB-INF" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.TDeleteStudentAction">
-    <configuration default="false" name="TGetMyTeachAction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Actions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Actions.TGetMyTeachAction" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AttendSystem" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.QrTest">
     <configuration default="false" name="TGetMyTeachDetailAction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -701,6 +730,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="Actions.TDeleteStudentAction" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AttendSystem" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="QrTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Utils.QrTest" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1254,19 +1303,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.attendenceSystem" />
-      <item index="1" class="java.lang.String" itemvalue="Application.TGetMyTeachAction" />
-      <item index="2" class="java.lang.String" itemvalue="Application.TGetMyTeachDetailAction" />
-      <item index="3" class="java.lang.String" itemvalue="Application.TCheckStudent" />
-      <item index="4" class="java.lang.String" itemvalue="Application.TAddScoreAction" />
-      <item index="5" class="java.lang.String" itemvalue="Application.TDeleteStudentAction" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TGetMyTeachDetailAction" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TCheckStudent" />
+      <item index="3" class="java.lang.String" itemvalue="Application.TAddScoreAction" />
+      <item index="4" class="java.lang.String" itemvalue="Application.TDeleteStudentAction" />
+      <item index="5" class="java.lang.String" itemvalue="Application.QrTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.TDeleteStudentAction" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TAddScoreAction" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TCheckStudent" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TGetMyTeachDetailAction" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TGetMyTeachAction" />
+        <item index="0" class="java.lang.String" itemvalue="Application.QrTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TDeleteStudentAction" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TAddScoreAction" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TCheckStudent" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TGetMyTeachDetailAction" />
       </list>
     </recent_temporary>
   </component>
@@ -1292,7 +1341,7 @@
       <workItem from="1475471385750" duration="4636000" />
       <workItem from="1475497638093" duration="5218000" />
       <workItem from="1475520345382" duration="12467000" />
-      <workItem from="1475591608026" duration="43977000" />
+      <workItem from="1475591608026" duration="45970000" />
     </task>
     <task id="LOCAL-00001" summary="academicYear建立成功。登录注册成功，">
       <created>1475533022502</created>
@@ -1392,11 +1441,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475751119028</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="tAddScore 更改成绩&#10;tDeleteStudent 删除非正常选课同学&#10;takes   选课关系&#10;更改成功">
+      <created>1475754271834</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1475754271834</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72710000" />
+    <option name="totallyTimeSpent" value="74703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1419,7 +1475,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.410582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26349208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1461,7 +1517,9 @@
     <MESSAGE value="tChangePassWord 成功" />
     <MESSAGE value="tGetMyTeachDetail  成功" />
     <MESSAGE value="tCheckStudent 成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="tCheckStudent 成功" />
+    <MESSAGE value="tAddScore 更改成绩&#10;tDeleteStudent 删除非正常选课同学&#10;takes   选课关系&#10;更改成功" />
+    <MESSAGE value="二维码 生成代码 插入成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="二维码 生成代码 插入成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1474,33 +1532,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/lang/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="4524" column="19" selection-start-line="4524" selection-start-column="19" selection-end-line="4524" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="849" column="27" selection-start-line="849" selection-start-column="27" selection-end-line="849" selection-end-column="27" />
-          <folding>
-            <element signature="e#32532#32533#0" expanded="false" />
-            <element signature="e#32566#32567#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/json-lib-2.4-jdk15.jar!/net/sf/json/JSONArray.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1116">
@@ -2034,7 +2065,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/TDeleteStudentAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
+        <state relative-caret-position="442">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/MatrixToImageWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1323">
+          <caret line="49" column="82" selection-start-line="49" selection-start-column="82" selection-end-line="49" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/QRCodeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2973#2997#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/QrTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
           <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2108,7 +2170,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lombok-1.16.10</last-edited>
+          <last-edited>mysql-connector-java-6.0.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
