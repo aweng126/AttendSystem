@@ -20,6 +20,8 @@ public class Sign {
     private String course_id;
     private Timestamp signtime;
 
+
+    public Sign(){}
     public Sign(String stu_id, String course_id, Timestamp signtime) {
         this.stu_id = stu_id;
         this.course_id = course_id;
@@ -50,21 +52,18 @@ public class Sign {
         this.signtime = signtime;
     }
 
-/*
-    public static void addSign(String stu_id,String course_id){
+    public static int save(String stu_id,String course_id,Timestamp time){
         Connection conn=null;
         PreparedStatement pstmt=null;
         Statement statement=null;
         boolean success=true;
         try {
             conn= DB.getConnection();
-           // pstmt=DB.getPStmt(conn, SignSqlStatement);
+             pstmt=DB.getPStmt(conn, SignSqlStatement.SIGN_INSERT);
 
             pstmt.setString(1,stu_id);
             pstmt.setString(2,course_id);
-         //   pstmt.setInt(3,room_id);
-
-
+            pstmt.setTimestamp(3,time);
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
@@ -81,7 +80,7 @@ public class Sign {
             }
         }
 
-           }*/
+           }
 
 
     @Override
