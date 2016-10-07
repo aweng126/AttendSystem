@@ -37,6 +37,5 @@ public class SSignCourseAction extends HttpServlet{
         }else{
             resp.getWriter().write(0);
         }
-
     }
 }

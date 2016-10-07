@@ -16,4 +16,10 @@ public class SignSqlStatement {
      */
   public static  final  String SIGN_INSERT="insert into sign value(null,?,?,?)";
 
+
+    /**
+     *查询签到情况
+     */
+   public static final String SIGN_SEARCH="select * from sign natural join student where stu_id=? and course_id=?";
+
 }

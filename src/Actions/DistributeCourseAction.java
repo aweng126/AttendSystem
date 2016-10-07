@@ -1,5 +1,6 @@
 package Actions;
 
+import Beans.CourseTime;
 import Beans.Teaches;
 
 import javax.servlet.ServletException;
@@ -20,7 +21,11 @@ public class DistributeCourseAction extends HttpServlet{
         String teacher_id=req.getParameter("teacher_id");
         String course_id=req.getParameter("course_id");
         int room_id=Integer.parseInt(req.getParameter("room_id"));
-        int time_id=Integer.parseInt(req.getParameter("time_id"));
+        String time_week=req.getParameter("time_week");
+        String time_order=req.getParameter("time_order");
+
+        int time_id= CourseTime.getTimeId(time_week,time_order);
+
         int academic_id=Integer.parseInt(req.getParameter("academic_id"));
         Teaches teaches=new Teaches(teacher_id,course_id,room_id,time_id,academic_id);
         teaches.save();

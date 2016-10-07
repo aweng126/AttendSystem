@@ -42,19 +42,6 @@ public class SqlStatement {
             "foreign key(stu_id) reference student" +
             "foreign key(class_id) reference class";
 
-    /**
-     * 签到表格..时间格式需要考虑一下
-     */
-    public static  final String SIGN_CREATE="create table sign" +
-            "stu_id varchar(12) primary key" +
-            "class_id varchar(12)" +
-            "sign_time Data()" +
-            "sign_week varchar(3)" +
-            "foreign key(stu_id) reference student" +
-            "foreign key(class_id) reference class";
-
-
-
 
     /**
      * 将学年信息插入数据库
@@ -79,7 +66,10 @@ public class SqlStatement {
             " value(null,?,?)";
 
 
-
+    /**
+     * 上课时间的搜索
+     */
+ public static final String COURSETIME_SEARCH = "select * from coursetime where time_week=? and time_order=?";
 
 
     /**
