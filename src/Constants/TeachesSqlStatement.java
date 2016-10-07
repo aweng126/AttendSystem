@@ -36,4 +36,9 @@ public class TeachesSqlStatement {
      * 删除查询信息
      */
     public static final String TEACHES_DELETE="delete from teaches where teacher_id=? and course_id=? ";
+
+    /**
+     * 查询对应的信息
+     */
+    public static final String TEACHES_SEARCH = "select * from teaches where teacher_id=? and course_id=?";
 }

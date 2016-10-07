@@ -40,6 +40,8 @@ public class StudentRegisterAction extends HttpServlet {
         resp.addCookie(idcookie);
         resp.addCookie(passcookie);
 
+       // resp.getWriter().write(1);
+
     }
 
 }

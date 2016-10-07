@@ -2,6 +2,7 @@ package Utils;
 
 import Beans.Student;
 import Beans.Teacher;
+import Beans.Teaches;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -47,7 +48,28 @@ public class FormTrans {
     }
 
 
+    public static final String ip=" 192.168.1.101";
 
+    /**
+     * 将teaches的数据写入到StringReq中
+     */
+    public static String teachesToStringReq(Teaches teaches){
+        String stringReq=ip+":8080/sChooseCourse?course_id="+teaches.getCourse_id()
+                +"&room_id="+teaches.getRoom_id()+"&time_id"+teaches.getTime_id() +
+                "&acadyear_id="+teaches.getAcadyear_id();
+        return  stringReq;
+    }
+
+
+    /**
+     * 将teaches的数据写入到StringReq中
+     */
+    public static String courseidToStringReq(String course_id){
+
+        String stringReq=ip+":8080/sSignCourse?course_id="+course_id;
+
+        return  stringReq;
+    }
 
 
 }

@@ -116,6 +116,34 @@ public void delete(){
 
     };
 
+    public static Teaches getTeaches(String teachesid,String courseid){
+
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        Teaches teaches=new Teaches();
+        try {
+            conn= DB.getConnection();
+            pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_SEARCH);
+            pstmt.setString(1,teachesid);
+            pstmt.setString(2,courseid);
+            pstmt.executeQuery();
+
+            while (rs.next()){
+                teaches.setTeaches_id(rs.getString("teacher_id"));
+                teaches.setCourse_id(rs.getString("course_id"));
+                teaches.setRoom_id(rs.getInt("room_id"));
+                teaches.setAcadyear_id(rs.getInt("acadyear_id"));
+                teaches.setTime_id(rs.getInt("time_id"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DB.closeStmt(pstmt);
+            DB.closeConn(conn);
+        }
+        return teaches;
+    }
 
 
     @Override

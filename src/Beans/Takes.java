@@ -139,6 +139,16 @@ public class Takes {
 
     }
 
+    public static void  saveByQR(String stuid,Teaches teaches){
+        Takes takes=new Takes();
+        takes.setStu_id(stuid);
+        takes.setCourse_id(teaches.getCourse_id());
+        takes.setRoom_id(teaches.getRoom_id());
+        takes.setTime_id(teaches.getTime_id());
+        takes.setAcadyear_id(teaches.getAcadyear_id());
+        takes.save();
+    }
+
 
     public int save(){
         Connection conn=null;
