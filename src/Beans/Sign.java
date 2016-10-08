@@ -1,14 +1,11 @@
 package Beans;
 
 import Constants.SignSqlStatement;
-import Constants.TakesSqlStatement;
 import Utils.DB;
-import sun.rmi.server.Util;
+import Utils.TimeUtils;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.sql.*;
-import java.util.Date;
+
 
 /**
  * Created by kingwen on 2016/10/6.
@@ -19,14 +16,45 @@ public class Sign {
     private String stu_id;
     private String course_id;
     private Timestamp signtime;
-
+    private int sign_week;
+    private String sign_grade;
+    private String sign_class;
 
     public Sign(){}
-    public Sign(String stu_id, String course_id, Timestamp signtime) {
+
+    public Sign(String stu_id, String course_id, Timestamp signtime, int sign_week, String sign_grade, String sign_class) {
         this.stu_id = stu_id;
         this.course_id = course_id;
         this.signtime = signtime;
+        this.sign_week = sign_week;
+        this.sign_grade = sign_grade;
+        this.sign_class = sign_class;
     }
+
+    public int getSign_week() {
+        return sign_week;
+    }
+
+    public void setSign_week(int sign_week) {
+        this.sign_week = sign_week;
+    }
+
+    public String getSign_grade() {
+        return sign_grade;
+    }
+
+    public void setSign_grade(String sign_grade) {
+        this.sign_grade = sign_grade;
+    }
+
+    public String getSign_class() {
+        return sign_class;
+    }
+
+    public void setSign_class(String sign_class) {
+        this.sign_class = sign_class;
+    }
+
 
     public String getStu_id() {
         return stu_id;
@@ -52,18 +80,23 @@ public class Sign {
         this.signtime = signtime;
     }
 
-    public static int save(String stu_id,String course_id,Timestamp time){
+
+    public static int save(Student student,String course_id){
         Connection conn=null;
         PreparedStatement pstmt=null;
-        Statement statement=null;
+        Timestamp now = TimeUtils.getCurrentTimeStamp();
+        int weekOfSecondAcadeyar=TimeUtils.getWeekByData(now);
         boolean success=true;
         try {
             conn= DB.getConnection();
-             pstmt=DB.getPStmt(conn, SignSqlStatement.SIGN_INSERT);
+            pstmt=DB.getPStmt(conn, SignSqlStatement.SIGN_INSERT);
 
-            pstmt.setString(1,stu_id);
+            pstmt.setString(1,student.getStuid());
             pstmt.setString(2,course_id);
-            pstmt.setTimestamp(3,time);
+            pstmt.setTimestamp(3,now);
+            pstmt.setInt(4,weekOfSecondAcadeyar);
+            pstmt.setString(5,student.getStugrade());
+            pstmt.setString(6,student.getStuclass());
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
@@ -80,7 +113,9 @@ public class Sign {
             }
         }
 
-           }
+    }
+
+
 
 
     @Override

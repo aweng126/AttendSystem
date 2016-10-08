@@ -1,6 +1,7 @@
 package Actions;
 
 import Beans.Sign;
+import Beans.Student;
 import Utils.CookieDetail;
 import Utils.TimeUtils;
 
@@ -25,22 +26,22 @@ public class SSignCourseAction extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String stu_id = CookieDetail.getStudentIdFromReq(req);
+        Student student=Student.getStudentById(stu_id);
         String course_id=req.getParameter("course_id");
+        int j=Sign.save(student,course_id);
 
-       Timestamp now = TimeUtils.getCurrentTimeStamp();
-
-       int i=Sign.save(stu_id,course_id,now);
-        if(i==1){
+        if(j==1){
             resp.getWriter().write(1);
         }else{
             resp.getWriter().write(0);
         }
     }
 
-    /*public static void main(String[] args) {
-        Timestamp now = TimeUtils.getCurrentTimeStamp();
-        System.out.println(Sign.save("0001","0002",now));
+/*    public static void main(String[] args) {
+        Student student=Student.getStudentById("0001");
+        int j=Sign.save(student,"0001");
+        System.out.println(j);
     }*/
+
 }

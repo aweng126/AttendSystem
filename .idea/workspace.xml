@@ -1,149 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="746535a3-2326-41c9-b0b5-b42ada88ec2b" name="Default" comment="前端后台的初步整合，后台修改">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/fontawesome-webfont_2d2816fe.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/fontawesome-webfont_51500cb8.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/fontawesome-webfont_51500cb8.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/fontawesome-webfont_51500cb8.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/blueish.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/bgs/landscape.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/btn-attach.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/btn-setting.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/btn-shuffle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/btn-tool.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/contact-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/contact-img2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/contact-profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/gallery-preview.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/gallery1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/gallery2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/gallery3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-arrow-black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-gallery-edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-gallery-trash.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-mail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-phone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-table-delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-table-edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/ico-table-new.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/index/last.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/index/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/jquery-ui/slider-handler.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/jquery-ui/slider-handler2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/jquery-ui/ui-bg_gloss-wave_35_f6a828_500x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/jquery-ui/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/lens.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/logo-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/new-gallery-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/no-img-gallery.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/personal-info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/select-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/select2/select2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/select2/select2x2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/select2/spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/skin-nav-bullets.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/table-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/uniform/bg-input-focus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/uniform/bg-input.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/uniform/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Actions/TCheckAttendRateAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/chart-showcase.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/code-editor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/bootstrap-overrides.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/code-editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/chart-showcase.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/elements.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/form-showcase.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/form-wizard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/gallery.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/grids.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/new-user.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/personal-info.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/signin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/signup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/tables.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/ui-elements.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/user-list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/user-profile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/compiled/web-app-icons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/elements.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/icons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/bootstrap-wysihtml5.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/bootstrap.datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/fullcalendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/fullcalendar.print.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/jquery-ui-1.10.2.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/morris.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/select2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/lib/uniform.default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/form-showcase.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/form-wizard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/gallery.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/grids.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/icons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/Chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap-wysihtml5-0.0.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap.datepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/fuelux.wizard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/interface/course_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/interface/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery-2.2.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery-latest.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery-ui-1.10.2.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.flot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.flot.resize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.flot.stack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.knob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.uniform.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/morris.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/select2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/signup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/theme.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/wysihtml5-0.3.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/new-user.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/personal-info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/signin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/signup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/tables.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ui-elements.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/user-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/user-profile.html" />
+    <list default="true" id="746535a3-2326-41c9-b0b5-b42ada88ec2b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java" afterPath="$PROJECT_DIR$/src/Actions/AddAcacemicYearAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/AddClassRoomAction.java" afterPath="$PROJECT_DIR$/src/Actions/AddClassRoomAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/AddCourseAction.java" afterPath="$PROJECT_DIR$/src/Actions/AddCourseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/AddTeacherAction.java" afterPath="$PROJECT_DIR$/src/Actions/AddTeacherAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/GetAllCourseAction.java" afterPath="$PROJECT_DIR$/src/Actions/GetAllCourseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/GetClassRoomListAction.java" afterPath="$PROJECT_DIR$/src/Actions/GetClassRoomListAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/GetTeachInfoAction.java" afterPath="$PROJECT_DIR$/src/Actions/GetTeachInfoAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/GetTeacherListAction.java" afterPath="$PROJECT_DIR$/src/Actions/GetTeacherListAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/SSignCourseAction.java" afterPath="$PROJECT_DIR$/src/Actions/SSignCourseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/TGetChooseCourseQR.java" afterPath="$PROJECT_DIR$/src/Actions/TGetChooseCourseQR.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Beans/CheckSign.java" afterPath="$PROJECT_DIR$/src/Beans/CheckSign.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Actions/GetTeacherInfo.java" afterPath="$PROJECT_DIR$/src/Actions/GetTeacherInfoAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Beans/Sign.java" afterPath="$PROJECT_DIR$/src/Beans/Sign.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Beans/Student.java" afterPath="$PROJECT_DIR$/src/Beans/Student.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants/SignSqlStatement.java" afterPath="$PROJECT_DIR$/src/Constants/SignSqlStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants/StudentSqlStatement.java" afterPath="$PROJECT_DIR$/src/Constants/StudentSqlStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/TimeUtils.java" afterPath="$PROJECT_DIR$/src/Utils/TimeUtils.java" />
     </list>
     <ignored path="AttendSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,11 +30,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="course_info.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/interface/course_info.js">
+      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Beans/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="166" column="3" selection-start-line="166" selection-start-column="3" selection-end-line="166" selection-end-column="3" />
+            <state relative-caret-position="1552">
+              <caret line="134" column="39" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentSqlStatement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Constants/StudentSqlStatement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -187,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SSignCourseAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SSignCourseAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Actions/SSignCourseAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="742">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="351">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,23 +74,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TCheckAttendRateAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/TCheckAttendRateAction.java">
+      <file leaf-file-name="CookieDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/CookieDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-54">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetTeacherInfoAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetTeacherInfoAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Actions/GetTeacherInfoAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="392">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sign.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Beans/Sign.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#771#772#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
+                <element signature="e#892#893#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1058#1059#0" expanded="true" />
+                <element signature="e#1095#1096#0" expanded="true" />
+                <element signature="e#1128#1129#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1224#1225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignSqlStatement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Constants/SignSqlStatement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -236,39 +143,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
               <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckSign.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beans/CheckSign.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1310">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1587#1598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetAllCourseAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/GetAllCourseAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetTeacherListAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/GetTeacherListAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -297,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Constants/TeachesSqlStatemenr.java" />
         <option value="$PROJECT_DIR$/src/Constants/ComplexSqlStatement.java" />
         <option value="$PROJECT_DIR$/src/Beans/TeachInfo.java" />
         <option value="$PROJECT_DIR$/src/Actions/DeleteTeachesAction.java" />
@@ -308,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/Actions/TGetMyTeachDetailAction.java" />
         <option value="$PROJECT_DIR$/src/Beans/DetailCourseInfo.java" />
         <option value="$PROJECT_DIR$/src/Constants/TeacherSqlStatement.java" />
-        <option value="$PROJECT_DIR$/src/Beans/Student.java" />
         <option value="$PROJECT_DIR$/src/Beans/Teacher.java" />
         <option value="$PROJECT_DIR$/src/Actions/TCheckStudent.java" />
         <option value="$PROJECT_DIR$/src/Constants/TakesSqlStatement.java" />
@@ -327,9 +199,6 @@
         <option value="$PROJECT_DIR$/src/Actions/StudentRegisterAction.java" />
         <option value="$PROJECT_DIR$/src/Utils/CookieDetail.java" />
         <option value="$PROJECT_DIR$/src/Actions/SChooseCourseAction.java" />
-        <option value="$PROJECT_DIR$/src/Utils/TimeUtils.java" />
-        <option value="$PROJECT_DIR$/src/Beans/Sign.java" />
-        <option value="$PROJECT_DIR$/src/Constants/SignSqlStatement.java" />
         <option value="$PROJECT_DIR$/src/Constants/SqlStatement.java" />
         <option value="$PROJECT_DIR$/src/Actions/DistributeCourseAction.java" />
         <option value="$PROJECT_DIR$/src/Beans/CourseTime.java" />
@@ -345,9 +214,14 @@
         <option value="$PROJECT_DIR$/web/js/interface/course_info.js" />
         <option value="$PROJECT_DIR$/src/Beans/CheckSign.java" />
         <option value="$PROJECT_DIR$/src/Actions/TCheckSignAction.java" />
-        <option value="$PROJECT_DIR$/src/Actions/SSignCourseAction.java" />
         <option value="$PROJECT_DIR$/src/Actions/TCheckAttendRateAction.java" />
         <option value="$PROJECT_DIR$/src/Actions/GetTeachInfoAction.java" />
+        <option value="$PROJECT_DIR$/src/Constants/SignSqlStatement.java" />
+        <option value="$PROJECT_DIR$/src/Utils/TimeUtils.java" />
+        <option value="$PROJECT_DIR$/src/Beans/Sign.java" />
+        <option value="$PROJECT_DIR$/src/Constants/StudentSqlStatement.java" />
+        <option value="$PROJECT_DIR$/src/Beans/Student.java" />
+        <option value="$PROJECT_DIR$/src/Actions/SSignCourseAction.java" />
       </list>
     </option>
   </component>
@@ -1425,10 +1299,10 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.SSignCourseAction" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GetClassRoomListAction" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GetAllCourseAction" />
-        <item index="3" class="java.lang.String" itemvalue="Application.CourseTime" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TimeUtils" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TimeUtils" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GetClassRoomListAction" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GetAllCourseAction" />
+        <item index="4" class="java.lang.String" itemvalue="Application.CourseTime" />
       </list>
     </recent_temporary>
   </component>
@@ -1455,7 +1329,7 @@
       <workItem from="1475497638093" duration="5218000" />
       <workItem from="1475520345382" duration="12467000" />
       <workItem from="1475591608026" duration="72376000" />
-      <workItem from="1475899156681" duration="7562000" />
+      <workItem from="1475899156681" duration="11088000" />
     </task>
     <task id="LOCAL-00001" summary="academicYear建立成功。登录注册成功，">
       <created>1475533022502</created>
@@ -1597,18 +1471,25 @@
       <option name="project" value="LOCAL" />
       <updated>1475915293734</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="前端后台的初步整合，后台修改">
+      <created>1475952572775</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1475952572775</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108671000" />
+    <option name="totallyTimeSpent" value="112197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286334" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21258135" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47180045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1620,24 +1501,24 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18872017" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286334" sideWeight="0.4978678" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21258135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21258135" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22334754" sideWeight="0.49281314" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22334754" sideWeight="0.50718683" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1779,40 +1660,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/CookieDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/SChooseCourseAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/TimeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beans/Sign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1839,22 +1692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants/SignSqlStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="115" selection-start-line="22" selection-start-column="115" selection-end-line="22" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants/StudentSqlStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1899,16 +1736,6 @@
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beans/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2349">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="154" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2180,16 +2007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/TCheckSignAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/TCheckAttendRateAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -2216,10 +2033,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/SSignCourseAction.java">
+    <entry file="file://$PROJECT_DIR$/src/Constants/SignSqlStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="196">
+          <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/TCheckSignAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2228,9 +2053,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/GetTeacherInfoAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="392">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/TimeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beans/Sign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/CookieDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants/StudentSqlStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beans/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1552">
+          <caret line="134" column="39" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/SSignCourseAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

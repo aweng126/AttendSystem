@@ -42,4 +42,10 @@ public class StudentSqlStatement {
      */
     public static final String STUDENT_SEARCH_WITHGCD="select * from student where stu_grade=? and stu_clss=? and dept_name=?";
 
+
+    /**
+     * 通过学生id得到学生信息
+     */
+    public static  final String STUDENT_SEARCHBYID="select * from student where stu_id=?";
+
 }

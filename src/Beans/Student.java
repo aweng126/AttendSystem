@@ -121,6 +121,29 @@ public class Student  {
             DB.closeConn(conn);
         }
     }
+public static Student getStudentById(String stuid){
+    Student student=new Student();
+    Connection conn=null;
+    ResultSet rs=null;
+    try {
+        conn=DB.getConnection();
+        PreparedStatement statement=DB.getPStmt(conn,StudentSqlStatement.STUDENT_SEARCHBYID);
+        statement.setString(1,stuid);
+        rs=statement.executeQuery();
+
+        while(rs.next()){
+         student= getStudentFromRS(rs);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }finally{
+        DB.closeRS(rs);
+        DB.closeConn(conn);
+    }
+    return student;
+}
+
+
 
     public static List<Student>  getStudentsWithGCD (String mgrade,String mclass,String mdeptname){
         List<Student> studentlist=new ArrayList<Student>();
@@ -136,14 +159,7 @@ public class Student  {
             rs=statement.executeQuery();
 
             while(rs.next()){
-                Student student=new Student();
-                student.setStuid(rs.getString("stu_id"));
-                student.setStuname(rs.getString("stu_name"));
-                student.setStupass("****");
-                student.setStusex(rs.getString("stu_sex"));
-                student.setStuclass(rs.getString("stu_class"));
-                student.setStugrade(rs.getString("stu_grade"));
-                student.setDept_name(rs.getString("dept_name"));
+               Student student= getStudentFromRS(rs);
                 studentlist.add(student);
             }
         } catch (SQLException e) {
@@ -167,15 +183,7 @@ public class Student  {
             conn=DB.getConnection();
             rs=DB.execteQuery(conn, StudentSqlStatement.STUDENT_SEARCH_WITHGCD);
             while(rs.next()){
-
-                Student student=new Student();
-                student.setStuid(rs.getString("stu_id"));
-                student.setStuname(rs.getString("stu_name"));
-                student.setStupass("****");
-                student.setStusex(rs.getString("stu_sex"));
-                student.setStuclass(rs.getString("stu_class"));
-                student.setStugrade(rs.getString("stu_grade"));
-                student.setDept_name(rs.getString("dept_name"));
+                Student student= getStudentFromRS(rs);
                 studentlist.add(student);
             }
         } catch (SQLException e) {
@@ -186,6 +194,26 @@ public class Student  {
         }
         return studentlist;
     }
+
+
+    public static Student getStudentFromRS(ResultSet rs){
+        Student student=null;
+        try {
+            student=new Student();
+            student.setStuid(rs.getString("stu_id"));
+            student.setStuname(rs.getString("stu_name"));
+            student.setStupass("****");
+            student.setStusex(rs.getString("stu_sex"));
+            student.setStuclass(rs.getString("stu_class"));
+            student.setStugrade(rs.getString("stu_grade"));
+            student.setDept_name(rs.getString("dept_name"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+     return student;
+    }
+
+
 
 
 

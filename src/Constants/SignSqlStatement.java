@@ -14,7 +14,7 @@ public class SignSqlStatement {
     /**
      * 签到表格的插入语句
      */
-  public static  final  String SIGN_INSERT="insert into sign value(null,?,?,?)";
+  public static  final  String SIGN_INSERT="insert into sign value(null,?,?,?,?,?,?)";
 
 
     /**
