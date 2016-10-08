@@ -79,11 +79,8 @@ public class CourseTime  {
             statement.setString(1,time_week);
             statement.setString(2,time_order);
             rs=statement.executeQuery();
-
             while(rs.next()){
-
                 timeId=rs.getInt("time_id");
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -94,7 +91,6 @@ public class CourseTime  {
         return  timeId;
     }
 
-
     @Override
     public String toString() {
         return "CourseTime{" +
@@ -102,4 +98,18 @@ public class CourseTime  {
                 ", order='" + order + '\'' +
                 '}';
     }
+
+
+ /*  通过以下代码对于我们的coursetime进行了数据的插入
+   public static void main(String[] args) {
+
+        for(int i=1;i<8;i++){
+            for(int j=1;j<6;j++){
+                CourseTime time=new CourseTime(String.valueOf(i),String.valueOf(j));
+                time.save();
+            }
+        }
+
+    }*/
+
 }

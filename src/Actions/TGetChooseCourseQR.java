@@ -32,12 +32,12 @@ public class TGetChooseCourseQR extends HttpServlet{
          */
         String chooseCourseReq= FormTrans.teachesToStringReq(teaches);
 
-        System.out.println(chooseCourseReq);
+        //得到当前所在目录
         String rootpath=getServletContext().getRealPath(File.separator)+"/resources/imgs/";
-
+        //选课url的设定
         String signQrContent= FormTrans.courseidToStringReq(course_id);
 
-        System.out.println("signQrContent"+signQrContent);
+        //System.out.println("signQrContent"+signQrContent);
 
         /**
          * 接下来是生成二维码图片的代码
@@ -60,9 +60,8 @@ public class TGetChooseCourseQR extends HttpServlet{
         /**
          * 保存路径的发送
          */
-
         String ChooseCourseQRPath="resources/imgs/chooseCourse.jpg";
-
+        //返回图片的相对地址
         resp.getWriter().write(ChooseCourseQRPath);
 
     }

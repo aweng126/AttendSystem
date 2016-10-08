@@ -32,8 +32,10 @@ public class DistributeCourseAction extends HttpServlet{
         resp.getWriter().write(1);
     }
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         Teaches teaches=new Teaches("0002","0001",2,4,1);
         teaches.save();
-    }
+    }*/
+
+
 }
