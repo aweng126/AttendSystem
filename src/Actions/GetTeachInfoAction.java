@@ -21,13 +21,11 @@ public class GetTeachInfoAction extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<TeachInfo> list =TeachInfo.getAllTeachInfo();
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
-
     public static void main(String[] args) {
         List<TeachInfo> list =TeachInfo.getAllTeachInfo();
         System.out.println(list);

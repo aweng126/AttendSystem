@@ -25,9 +25,9 @@ public class GetTeacherListAction extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<Teacher> list=Teacher.getTeachers();
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
-
 
     public static void main(String[] args) {
         List<Teacher> list=Teacher.getTeachers();

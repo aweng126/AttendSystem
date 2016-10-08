@@ -38,4 +38,9 @@ public class SSignCourseAction extends HttpServlet{
             resp.getWriter().write(0);
         }
     }
+
+    /*public static void main(String[] args) {
+        Timestamp now = TimeUtils.getCurrentTimeStamp();
+        System.out.println(Sign.save("0001","0002",now));
+    }*/
 }

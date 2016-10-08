@@ -18,7 +18,7 @@ import java.util.List;
  * Created by kingwen on 2016/10/6.
  */
 @WebServlet(urlPatterns = "/tGetInfo")
-public class GetTeacherInfo extends HttpServlet {
+public class GetTeacherInfoAction extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

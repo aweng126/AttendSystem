@@ -17,7 +17,7 @@ public class AddAcacemicYearAction extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String ecadyear=req.getParameter("ecadyear");
+        String ecadyear=req.getParameter("acadyear");
         String term=req.getParameter("term");
 
         boolean islegal=false;

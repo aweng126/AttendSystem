@@ -1,9 +1,6 @@
 package Beans;
-
 import Constants.SignSqlStatement;
-import Constants.TeacherSqlStatement;
 import Utils.DB;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +9,7 @@ import java.util.List;
  * Created by kingwen on 2016/10/7.
  * 用于老师查看学生签到情况
  */
+
 public class CheckSign {
 
     private String stu_id;

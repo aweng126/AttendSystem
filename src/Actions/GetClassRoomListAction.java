@@ -25,6 +25,7 @@ public class GetClassRoomListAction extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<ClassRoom> list=ClassRoom.getAllClassRooms();
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
 

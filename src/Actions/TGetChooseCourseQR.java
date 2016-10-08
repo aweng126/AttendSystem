@@ -19,6 +19,7 @@ import java.io.IOException;
  * Created by kingwen on 2016/10/6.
  * 选课二维码生成并返回
  */
+
 @WebServlet(urlPatterns = "/tGetChooseCourseQR")
 public class TGetChooseCourseQR extends HttpServlet{
     @Override

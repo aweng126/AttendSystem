@@ -1,0 +1,62 @@
+
+.form-group label{
+	display: inline-block;
+	width: 20%;
+	color: #AAAAAA;
+	
+	
+}
+.form-group input{
+	display: inline-block;
+	width: 70%;
+	margin-left: 2%;
+	
+}
+.btn-glow.submit_btn{
+	float: right;
+	margin-top: 1px;
+	margin-right: 40px;
+}
+.btn-glow.cancel_btn{
+	float: left;
+	
+}
+
+#allocation_course{
+	display: none;
+}
+#allocation_course .body{
+	height: 450px;
+}
+.clear{
+	clear: both;
+}
+#add_course{
+	display: none;
+}
+#add_classroom{
+	display: none;
+}
+#add_classroom .body{
+	height: 200px;
+}
+#add_term{
+	display: none;
+}
+#add_term .body{
+	height: 200px;
+}
+#add_teacher{
+	display: none;
+}
+#add_teacher .body{
+	height: 400px;
+}
+#course_info_ul li{
+	font-weight: normal;
+    font-size: 13px;
+    color: rgb(76, 83, 90);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 7px;
+}

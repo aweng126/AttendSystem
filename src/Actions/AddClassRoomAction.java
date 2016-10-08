@@ -27,6 +27,8 @@ public class AddClassRoomAction extends HttpServlet {
         String roomnum=req.getParameter("roomnum");
 
 
+        System.out.println(req.getParameter("roomnum"));
+
         ClassRoom room=new ClassRoom(building,roomnum);
         room.save();
 

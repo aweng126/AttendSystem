@@ -18,6 +18,12 @@ public class AddCourseAction extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String course_id=req.getParameter("course_id");
         String course_name=req.getParameter("course_name");
+
+        String credit=req.getParameter("course_credit");
+
+
+
+        System.out.println(req.getParameter("course_credit"));
         int course_credit=Integer.parseInt(req.getParameter("course_credit"));
 
         if(!("".equals(course_credit)||"".equals(course_id)||"".equals(course_name))){
