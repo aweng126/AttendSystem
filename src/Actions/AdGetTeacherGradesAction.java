@@ -21,8 +21,7 @@ public class AdGetTeacherGradesAction extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String teacher_id=req.getParameter("teacher_id");
-
-       List<GradeClass> mgc=GradeClass.getMyGrade(teacher_id);
+        List<GradeClass> mgc=GradeClass.getMyGrade(teacher_id);
        resp.getWriter().write(JSONArray.fromObject(mgc).toString());
 
     }

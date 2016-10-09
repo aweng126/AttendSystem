@@ -28,8 +28,12 @@ public class DistributeCourseAction extends HttpServlet{
 
         int academic_id=Integer.parseInt(req.getParameter("academic_id"));
         Teaches teaches=new Teaches(teacher_id,course_id,room_id,time_id,academic_id);
-        teaches.save();
-        resp.getWriter().write(1);
+        int i=teaches.save();
+        if(i==1){
+            resp.getWriter().write("1");
+        }else {
+            resp.getWriter().write("0");
+        }
     }
 
   /*  public static void main(String[] args) {

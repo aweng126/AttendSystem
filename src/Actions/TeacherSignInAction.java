@@ -1,5 +1,6 @@
 package Actions;
 
+import Beans.Teacher;
 import Constants.TeacherSqlStatement;
 import Utils.DB;
 import Constants.SqlStatement;
@@ -31,72 +32,29 @@ public class TeacherSignInAction extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //得到cookie从而判断我们的用户名和密码
 
-        String teacher_id=req.getParameter("teacher_id");
-        String teacher_pass=req.getParameter("teacher_pass");
-
+        String teacher_id = req.getParameter("teacher_id");
+        String teacher_pass = req.getParameter("teacher_pass");
 
         /**
-         * 如果登录成功，那么进入主界面
+         * admin 返回值代表含义
+         * -1：登录失败
+         * 0： 普通老师登录
+         * 1：教务老师登录
          */
-        if(islegal(teacher_id,teacher_pass)){
-
-            resp.getWriter().write(1);
-            /**
-             * 将教师的id和权限放到cookie中去，方便之后的使用
-             */
-            Cookie cookie=new Cookie("teacher_id",teacher_id);
-            Cookie cookie1=new Cookie("teacher_isadmin",misadmin);
-            cookie.setMaxAge(1000000000);
-            resp.addCookie(cookie);
-            resp.addCookie(cookie1);
-
-            resp.sendRedirect("/");
-            resp.sendRedirect(req.getContextPath() + "/index.html");
-
-
-
-        }else {
-            resp.getWriter().write(0);
+        int admin = Teacher.islegal(teacher_id, teacher_pass);
+        switch (admin) {
+            case -1:
+                resp.getWriter().write("0");
+                break;
+            case 0:
+                Cookie cookie = new Cookie("teacher_id", teacher_id);
+                resp.addCookie(cookie);
+                resp.getWriter().write("1");
+                break;
+            case 1:
+                resp.getWriter().write("2");
+                break;
         }
     }
-
-
-    /**
-     * 登录注册界面，用于检测我们的用户名和密码
-     * @param id   老师的账号
-     * @param pass  登录的密码
-     * @return      返回是否存在
-     */
-    private boolean islegal(String id, String pass) {
-        Connection conn=null;
-        PreparedStatement pstmt = null;
-        ResultSet rs=null;
-        try {
-            conn= DB.getConnection();
-            pstmt=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_LOGIN) ;
-            pstmt.setString(1, id);
-            pstmt.setString(2, pass);
-            rs=pstmt.executeQuery();
-
-            while (rs.next()){
-              //得到是否是管理员
-               misadmin=rs.getString("teacher_isadmin");
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            DB.closeStmt(pstmt);
-            DB.closeConn(conn);
-        }
-
-        if(DB.getRestultSetSize(rs)==1) {
-            return true;
-        }else
-            return false;
-    }
-
-
 }

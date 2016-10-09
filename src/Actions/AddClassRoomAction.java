@@ -30,18 +30,15 @@ public class AddClassRoomAction extends HttpServlet {
         System.out.println(req.getParameter("roomnum"));
 
         ClassRoom room=new ClassRoom(building,roomnum);
-        room.save();
+        int i =room.save();
 
-        resp.getWriter().write(1);
-        ClassRoom room1 = new ClassRoom();
+        if(i==1){
+            resp.getWriter().write("1");
+        }else {
+            resp.getWriter().write("0");
+        }
+
+
     }
-    void a(String... s)
-    {
-    }
-    public static void main(String[] args) {
-        ClassRoom classRoom = new ClassRoom("ww","tt");
-        List<ClassRoom> list = Arrays.asList(new ClassRoom("11","22"),new ClassRoom("33","44"));
-    //  Arrays.stream(classRoom.getClass().getMethods()).forEach(e-> e.invoke(classRoom,)));
-        System.out.println(JSONArray.fromObject(list));
-    }
+
 }

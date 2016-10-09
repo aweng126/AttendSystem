@@ -32,9 +32,9 @@ public class AddCourseTimeAction extends HttpServlet {
         }
 
         if(success){
-            resp.getWriter().write(1);
+            resp.getWriter().write("1");
         }else{
-            resp.getWriter().write(0);
+            resp.getWriter().write("0");
         }
 
     }

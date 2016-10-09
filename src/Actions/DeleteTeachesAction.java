@@ -21,8 +21,13 @@ public class DeleteTeachesAction extends HttpServlet {
         String teacher_id=req.getParameter("teacher_id");
 
         Teaches teaches=new Teaches(course_id,teacher_id);
-        teaches.delete();
-        resp.getWriter().write(1);
+        int i =teaches.delete();
+        if(i==1){
+            resp.getWriter().write("1");
+        }else {
+            resp.getWriter().write("0");
+        }
+
     }
 
 

@@ -27,8 +27,8 @@ public class TCheckSignAction extends HttpServlet{
         resp.getWriter().write(JSONArray.fromObject(list).toString());
 
     }
-
-    /*public static void main(String[] args) {
+/*
+    public static void main(String[] args) {
         System.out.println(CheckSign.getSigns("0001","0002").toString());
     }*/
 

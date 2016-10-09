@@ -22,9 +22,9 @@ public class TDeleteStudentAction extends HttpServlet {
         int i = Takes.delete(stu_id,course_id);
 
         if(i==1){
-            resp.getWriter().write(1);
+            resp.getWriter().write("1");
         }else {
-            resp.getWriter().write(0);
+            resp.getWriter().write("0");
         }
     }
 

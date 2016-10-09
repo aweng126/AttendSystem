@@ -30,18 +30,18 @@ public class StudentRegisterAction extends HttpServlet {
         System.out.println("stuid="+stuid);*/
 
         Student student = FormTrans.getStudent(req);
-        student.save();
-
-        //创建用于用户名和密码的cookie
-        Cookie idcookie=new Cookie("stu_id",student.getStuid());
-        Cookie passcookie=new Cookie("stu_pass",student.getStupass());
-        idcookie.setMaxAge(60*60*24*30);
-        passcookie.setMaxAge(60*60*24*30);
-        resp.addCookie(idcookie);
-        resp.addCookie(passcookie);
-
-       // resp.getWriter().write(1);
-
+        int i=student.save();
+        if(i==1){
+            Cookie idcookie=new Cookie("stu_id",student.getStuid());
+            Cookie passcookie=new Cookie("stu_pass",student.getStupass());
+            idcookie.setMaxAge(60*60*24*30);
+            passcookie.setMaxAge(60*60*24*30);
+            resp.addCookie(idcookie);
+            resp.addCookie(passcookie);
+            resp.getWriter().write("1");
+        }else {
+            resp.getWriter().write("0");
+        }
     }
 
 }

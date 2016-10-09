@@ -21,17 +21,15 @@ public class AddCourseAction extends HttpServlet {
 
         String credit=req.getParameter("course_credit");
 
-
-
         System.out.println(req.getParameter("course_credit"));
         int course_credit=Integer.parseInt(req.getParameter("course_credit"));
 
         if(!("".equals(course_credit)||"".equals(course_id)||"".equals(course_name))){
             Course course=new Course(course_id,course_name,course_credit);
             course.save();
-            resp.getWriter().write(1);
+            resp.getWriter().write("1");
         }else{
-            resp.getWriter().write(0);
+            resp.getWriter().write("0");
         }
     }
 

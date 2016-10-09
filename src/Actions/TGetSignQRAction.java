@@ -1,5 +1,6 @@
 package Actions;
 
+import Constants.QrConstants;
 import Utils.FormTrans;
 import Utils.QRCodeFactory;
 import com.google.zxing.WriterException;
@@ -22,37 +23,27 @@ public class TGetSignQRAction extends HttpServlet {
 
         String course_id=req.getParameter("course_id");
 
-        String rootpath=getServletContext().getRealPath(File.separator)+"/resources/imgs/";
-
+        String rootpath=QrConstants.getRootPath(getServletContext().getRealPath(File.separator));
         String signQrContent= FormTrans.courseidToStringReq(course_id);
-
         System.out.println("signQrContent"+signQrContent);
 
         /**
          * 接下来是生成二维码图片的代码
          */
-        String logUri=rootpath+ "a.png";
-        String outFileUri=rootpath+"hello.jpg";
-        int[]  size=new int[]{430,430};
-        String format = "jpg";
-
+        String logUri=rootpath+ QrConstants.LOGO_NAME;
+        String outFileUri=rootpath+QrConstants.SIGN_NAME;
         try {
-            new QRCodeFactory().CreatQrImage(signQrContent, format, outFileUri, logUri,size);
+            new QRCodeFactory().CreatQrImage(signQrContent, QrConstants.QR_IMG_FORMAT, outFileUri, logUri,QrConstants.QR_IMG_SIZE);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (WriterException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         /**
          * 保存路径的发送
          */
-        String signQRPath="resources/imgs/hello.jpg";
-
-      //  System.out.println("path"+signQRPath);
-
+        String signQRPath=QrConstants.getQrPath(QrConstants.SIGN_NAME);
         resp.getWriter().write(signQRPath);
 
     }

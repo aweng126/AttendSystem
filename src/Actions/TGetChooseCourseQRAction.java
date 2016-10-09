@@ -1,6 +1,7 @@
 package Actions;
 
 import Beans.Teaches;
+import Constants.QrConstants;
 import Utils.CookieDetail;
 import Utils.FormTrans;
 import Utils.QRCodeFactory;
@@ -24,44 +25,34 @@ import java.io.IOException;
 public class TGetChooseCourseQRAction extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String teacher_id= CookieDetail.getTeacherIdFromReq(req);
         String course_id=req.getParameter("course_id");
 
         Teaches teaches = Teaches.getTeaches(teacher_id,course_id);
-        /**
-         * 接下来是teachers的拼接过程，用于学生选课的req
-         */
         String chooseCourseReq= FormTrans.teachesToStringReq(teaches);
 
         //得到当前所在目录
-        String rootpath=getServletContext().getRealPath(File.separator)+"/resources/imgs/";
-        //选课url的设定
-        String signQrContent= FormTrans.courseidToStringReq(course_id);
-
-        //System.out.println("signQrContent"+signQrContent);
+        String rootpath=QrConstants.getRootPath(getServletContext().getRealPath(File.separator));
 
         /**
          * 接下来是生成二维码图片的代码
          */
-        String logUri=rootpath+ "a.png";
-        String outFileUri=rootpath+"chooseCourse.jpg";
-        int[]  size=new int[]{430,430};
-        String format = "jpg";
+        String logUri=rootpath+ QrConstants.LOGO_NAME;
+        String outFileUri=rootpath+QrConstants.CHOOSECOURSE_NAME;
 
         try {
-            new QRCodeFactory().CreatQrImage(signQrContent, format, outFileUri, logUri,size);
+            new QRCodeFactory().CreatQrImage(chooseCourseReq, QrConstants.QR_IMG_FORMAT, outFileUri, logUri,QrConstants.QR_IMG_SIZE);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (WriterException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         /**
          * 保存路径的发送
          */
-        String ChooseCourseQRPath="resources/imgs/chooseCourse.jpg";
+        String ChooseCourseQRPath="resources/imgs/"+QrConstants.CHOOSECOURSE_NAME;
         //返回图片的相对地址
         resp.getWriter().write(ChooseCourseQRPath);
 

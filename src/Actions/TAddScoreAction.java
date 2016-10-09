@@ -11,6 +11,7 @@ import java.io.IOException;
 
 /**
  * Created by kingwen on 2016/10/6.
+ *
  */
 @WebServlet(urlPatterns = "/tAddScore")
 public class TAddScoreAction  extends HttpServlet{
@@ -22,9 +23,9 @@ public class TAddScoreAction  extends HttpServlet{
         int score=Integer.parseInt(req.getParameter("score"));
         int i= Takes.AddScore(score,stu_id,course_id);
         if(i==1){
-            resp.getWriter().write(1);
+            resp.getWriter().write("1");
         }else {
-            resp.getWriter().write(0);
+            resp.getWriter().write("0");
         }
     }
 

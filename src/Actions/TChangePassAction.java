@@ -24,9 +24,9 @@ public class TChangePassAction extends HttpServlet {
         String pass=req.getParameter("teacher_newpass");
         int id=Teacher.changePass(teacher_id,pass);
         if(id==1){
-            resp.getWriter().write(1);
+            resp.getWriter().write("1");
         }else {
-            resp.getWriter().write(0);
+            resp.getWriter().write("0");
         }
     }
 /*

@@ -23,10 +23,10 @@ public class AddTeacherAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Teacher teacher= FormTrans.getTeacher(req);
-        System.out.println("====================");
+
+        teacher.save();
+        System.out.println("teacher save");
         resp.getWriter().write("2");
-     /*   teacher.save();
-        System.out.println("teacher save");*/
 
     }
 
