@@ -1,6 +1,8 @@
 package Actions;
 
 import Beans.Student;
+import Constants.OtherConstants;
+import Utils.CookieDetail;
 import Utils.FormTrans;
 
 import javax.servlet.ServletException;
@@ -38,6 +40,9 @@ public class StudentRegisterAction extends HttpServlet {
             passcookie.setMaxAge(60*60*24*30);
             resp.addCookie(idcookie);
             resp.addCookie(passcookie);
+
+            String url= CookieDetail.getRedirectFrom(req);
+            resp.sendRedirect(url);
             resp.getWriter().write("1");
         }else {
             resp.getWriter().write("0");

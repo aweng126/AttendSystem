@@ -2,11 +2,13 @@ package Actions;
 
 import Beans.Sign;
 import Beans.Student;
+import Constants.OtherConstants;
 import Utils.CookieDetail;
 import Utils.TimeUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,35 +29,22 @@ public class SSignCourseAction extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-         /*      //得到cookie从而判断我们的用户名和密码
-        Cookie cookie[]=req.getCookies();
-        String id ="";
-        String pass="";
-        //将cookie进行打印
-        for(Cookie i:cookie){
-            switch(i.getName().toString().trim()){
-                case "stu_id":
-                    id=i.getValue();
-                    break;
-                case "stu_pass":
-                    pass=i.getValue();
-                    break;
-                default:
-                    //donothing
-            }
-            System.out.print(i.toString().trim());
-        }*/
-
-
         String stu_id = CookieDetail.getStudentIdFromReq(req);
-        Student student=Student.getStudentById(stu_id);
-        String course_id=req.getParameter("course_id");
-        int j=Sign.save(student,course_id);
+        if("".equals(stu_id)){
+            Cookie cookie=new Cookie("from","sign");
+            resp.addCookie(cookie);
+            resp.sendRedirect(OtherConstants.getUrl(OtherConstants.getStudentRegisterUrl()));
+        }else {
 
-        if(j==1){
-            resp.getWriter().write("1");
-        }else{
-            resp.getWriter().write("0");
+            Student student=Student.getStudentById(stu_id);
+            String course_id=req.getParameter("course_id");
+            int j=Sign.save(student,course_id);
+
+            if(j==1){
+                resp.getWriter().write("1");
+            }else{
+                resp.getWriter().write("0");
+            }
         }
     }
 
