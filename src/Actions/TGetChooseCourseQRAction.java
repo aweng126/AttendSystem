@@ -21,7 +21,7 @@ import java.io.IOException;
  */
 
 @WebServlet(urlPatterns = "/tGetChooseCourseQR")
-public class TGetChooseCourseQR extends HttpServlet{
+public class TGetChooseCourseQRAction extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String teacher_id= CookieDetail.getTeacherIdFromReq(req);
