@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="login-bg">
 <head>
-	<title>Detail Admin - Sign in</title>
+	<title>基于二维码扫描的考勤系统</title>
     
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
@@ -67,20 +67,21 @@
         <div class="span4 box">
             <div class="content-wrap">
                 <h6>Log in</h6>
-                <input class="span12" type="text" placeholder="E-mail address" />
-                <input class="span12" type="password" placeholder="Your password" />
+                <input id="teacher_id" class="span12" type="text" placeholder="E-mail address" />
+                <input id="teacher_password" class="span12" type="password" placeholder="Your password" />
                 <a href="#" class="forgot">Forgot password?</a>
                 <div class="remember">
                     <input id="remember-me" type="checkbox" />
                     <label for="remember-me">Remember me</label>
                 </div>
-                <a class="btn-glow primary login" href="index.html">Log in</a>
+               <!-- <a class="btn-glow primary login" id="login">Log in</a>-->
+                <button id="sign_up_btn">Sign up</button>
             </div>
         </div>
 
         <div class="span4 no-account">
             <p>Don't have an account?</p>
-            <a href="signup.html">Sign up</a>
+
         </div>
     </div>
 
@@ -88,6 +89,7 @@
     <script src="js/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/theme.js"></script>
+    <script type="text/javascript" src="js/interface/signIn.js" ></script>
 
     <!-- pre load bg imgs -->
     <script type="text/javascript">
@@ -104,6 +106,8 @@
             });
 
         });
+        
+        
     </script>
 
 </body>

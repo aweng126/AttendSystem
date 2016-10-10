@@ -24,6 +24,7 @@ public class GetTeachInfoAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<TeachInfo> list =TeachInfo.getAllTeachInfo();
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
     public static void main(String[] args) {

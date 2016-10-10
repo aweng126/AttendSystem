@@ -2,9 +2,7 @@
 .form-group label{
 	display: inline-block;
 	width: 20%;
-	color: #AAAAAA;
-	
-	
+	color: #AAAAAA;	
 }
 .form-group input{
 	display: inline-block;
@@ -59,4 +57,20 @@
     text-decoration: none;
     display: block;
     margin-bottom: 7px;
+}
+
+.allocation_info{
+	width: 14%;
+	text-align: center;
+	
+}
+.table .operate{
+	cursor: pointer;
+}
+
+.table .operate:hover{
+	color: #003399;
+}
+#show_allocation{
+	display: none;
 }

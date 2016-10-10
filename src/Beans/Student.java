@@ -99,9 +99,10 @@ public class Student  {
     /**
      * 鉴于前端后台分离的原则，对于javabean进行自定义的数据库插入
      */
-    public void save(){
+    public int  save(){
         Connection conn= null;
         PreparedStatement pStmt=null;
+        boolean success=true;
         try {
             conn= DB.getConnection();
             pStmt=DB.getPStmt(conn, StudentSqlStatement.STUDENT_INSERT);
@@ -116,9 +117,15 @@ public class Student  {
             pStmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+            success=false;
         }finally {
             DB.closeStmt(pStmt);
             DB.closeConn(conn);
+            if(success){
+                return 1;
+            }else {
+                return 0;
+            }
         }
     }
 public static Student getStudentById(String stuid){
@@ -214,7 +221,32 @@ public static Student getStudentById(String stuid){
     }
 
 
+    /**
+     * 登录注册界面，用于检测我们的用户名和密码
+     * （其实这个是完全没有必要的，我们的cookie都是我们自己放的，然后自己获得就好，根本没有什么必要说这里没有）
+     * @param id   学生的账号
+     * @param pass  登录的密码
+     * @return      返回是否存在
+     */
+    public static  boolean islegal(String id, String pass) {
+        Connection conn=null;
+        PreparedStatement pstmt = null;
+        ResultSet rs=null;
+        try {
+            conn= DB.getConnection();
+            pstmt=DB.getPStmt(conn, StudentSqlStatement.STUDENT_LOGIN) ;
+            pstmt.setString(1, id);
+            pstmt.setString(2, pass);
+            rs=pstmt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        if(DB.getRestultSetSize(rs)==1) {
+            return true;
+        }else
+            return false;
+    }
 
 
 

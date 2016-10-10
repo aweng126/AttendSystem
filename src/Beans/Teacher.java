@@ -103,10 +103,10 @@ public class Teacher {
         return list;
     }
 
-    public void save(){
+    public int  save(){
         Connection conn=null;
         PreparedStatement pstmt=null;
-        Statement statement=null;
+        boolean success=true;
             try {
 
                 conn= DB.getConnection();
@@ -122,10 +122,15 @@ public class Teacher {
 
             } catch (SQLException e) {
                 e.printStackTrace();
+                success=false;
             }finally {
                 DB.closeStmt(pstmt);
                 DB.closeConn(conn);
-
+                if(success){
+                    return 1;
+                }else {
+                    return 0;
+                }
             }
     };
 
@@ -189,7 +194,7 @@ public class Teacher {
     return  list;
     }
 
-    public static List<Student>  getStudentsWithCourse (String courseid){
+    public static List<Student>  getStudentsWithCourse (String courseid,int page){
         List<Student> studentlist=new ArrayList<Student>();
         Connection conn=null;
         ResultSet rs=null;
@@ -197,6 +202,7 @@ public class Teacher {
             conn=DB.getConnection();
             PreparedStatement statement=DB.getPStmt(conn,TeacherSqlStatement.TEACHER_CHECKSTUDENT);
             statement.setString(1,courseid);
+            statement.setInt(2,(page-1)*7);
             rs=statement.executeQuery();
             while(rs.next()){
                 Student student=new Student();
@@ -255,4 +261,38 @@ public class Teacher {
         }
         return courses;
     }
+
+    /**
+     * 登录注册界面，用于检测我们的用户名和密码
+     * @param id   老师的账号
+     * @param pass  登录的密码
+     * @return      返回是否存在
+     */
+    public static int islegal(String id, String pass) {
+        Connection conn=null;
+        PreparedStatement pstmt = null;
+        ResultSet rs=null;
+        int   admin=-1;
+        try {
+            conn= DB.getConnection();
+            pstmt=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_LOGIN) ;
+            pstmt.setString(1, id);
+            pstmt.setString(2, pass);
+            rs=pstmt.executeQuery();
+
+            if (rs.next()){
+                //得到是否是管理员
+                admin=Integer.parseInt(rs.getString("teacher_isadmin"));
+                System.out.println("admin"+admin+"admin");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DB.closeStmt(pstmt);
+            DB.closeConn(conn);
+
+            return admin;
+        }
+    }
+
 }

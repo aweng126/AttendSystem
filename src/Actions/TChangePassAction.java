@@ -23,6 +23,7 @@ public class TChangePassAction extends HttpServlet {
      String teacher_id= CookieDetail.getTeacherIdFromReq(req);
         String pass=req.getParameter("teacher_newpass");
         int id=Teacher.changePass(teacher_id,pass);
+        resp.setCharacterEncoding("UTF-8");
         if(id==1){
             resp.getWriter().write("1");
         }else {

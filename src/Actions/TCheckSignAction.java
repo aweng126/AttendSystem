@@ -23,7 +23,7 @@ public class TCheckSignAction extends HttpServlet{
         String course_id=req.getParameter("course_id");
 
         List<CheckSign> list=CheckSign.getSigns(stu_id,course_id);
-
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(list).toString());
 
     }

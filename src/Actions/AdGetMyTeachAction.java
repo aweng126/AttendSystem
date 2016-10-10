@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by kingwen on 2016/10/9.
  */
-@WebServlet(urlPatterns = "adminGetMyTeach")
+@WebServlet(urlPatterns = "/adminGetMyTeach")
 public class AdGetMyTeachAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class AdGetMyTeachAction extends HttpServlet {
         List<Course> courses = Teacher.getMyTeach(teacher_id);
 
         System.out.println("adminGetTeach :"+"teacher_id="+teacher_id+"courses"+courses.toString());
-
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(courses).toString());
 
     }

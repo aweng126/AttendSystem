@@ -31,6 +31,7 @@ public class TGetMyTeachAction extends HttpServlet {
 
         List<Course>  courses = Teacher.getMyTeach(teacher_id);
 
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(courses).toString());
 
     }

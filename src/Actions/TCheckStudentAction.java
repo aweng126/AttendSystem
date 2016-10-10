@@ -24,6 +24,7 @@ public class TCheckStudentAction extends HttpServlet {
         int page=Integer.parseInt(req.getParameter("page_id"));
 
         List<Student> students= Teacher.getStudentsWithCourse(course_id,page);
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(students).toString());
     }
 

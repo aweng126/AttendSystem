@@ -26,6 +26,7 @@ public class AdRequestAttendByWeekForward extends HttpServlet {
         int firstweek=Integer.parseInt(req.getParameter("display_firstweek"));
 
         List<AttendRate> list=AttendRate.getAttendRateForward(mgrade,mclass,course_id,firstweek);
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(list).toString());
 
     }

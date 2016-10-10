@@ -11,7 +11,7 @@ function SubmitInfo(){
 		async:true,
 		data:data_info,
 		success:function(data){
-			handlerData
+			handlerData(data)
 		}
 	});
 	function handlerData(data){

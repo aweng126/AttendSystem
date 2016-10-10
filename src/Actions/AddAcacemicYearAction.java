@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by kingwen on 2016/10/4.
  */
-@WebServlet(urlPatterns = "/adminAddAcademicYear" , name = "academicyear")
+@WebServlet(urlPatterns = "/adminAddAcademicYear" )
 public class AddAcacemicYearAction extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,6 +32,7 @@ public class AddAcacemicYearAction extends HttpServlet{
                myear.saveYear();
            }
         }
+        resp.setCharacterEncoding("UTF-8");
         if(islegal){
             resp.getWriter().write("1");
         }else{

@@ -24,6 +24,7 @@ public class TGetMyTeachDetailAction extends HttpServlet {
         String course_id=req.getParameter("course_id");
 
         DetailCourseInfo detailCourseInfo=DetailCourseInfo.getDetailCourseInfo(teacher_id,course_id);
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(detailCourseInfo).toString());
     }
 

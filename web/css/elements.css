@@ -493,7 +493,7 @@
 	border-radius: 5px;
 	box-shadow: 0px 0px 9px 0px rgb(214, 214, 214);
 	padding: 10px;
-	height: 300px;
+	/*height: 300px;*/
 }
 .pop-dialog .close-icon{
 	float:right;

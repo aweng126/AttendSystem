@@ -22,7 +22,7 @@ public class TeacherSqlStatement {
     public static final String TEACHER_INSERT="insert into teacher values(?,?,?,?,?,?)";
 
     //教师表格的搜索界面，老师登录的时候使用
-    public static final String TEACHER_LOGIN="select * from student where teacher_id=? and teacher_pass=?";
+    public static final String TEACHER_LOGIN="select * from teacher where teacher_id = ? and teacher_pass=?";
 
     //获得教师的所有数据
     public static final String TEACHER_SEARCHALL="select * from teacher";
@@ -73,8 +73,14 @@ public class TeacherSqlStatement {
      */
 
     public static final String TEACHER_CHECKSTUDENT ="select student.stu_id,stu_name,stu_sex,stu_class,stu_grade,dept_name  from  student , " +
-            "takes where takes.course_id=? and takes.stu_id=student.stu_id ";
+            "takes where takes.course_id=? and takes.stu_id=student.stu_id order by stu_grade limit ? ,7 ";
 
+
+    /**
+     * 查看老师教授的选课同学的班级号和年级号
+     */
+     public static final String TEACHER_GET_GREDEANDCLASS="select stu_class,stu_grade from (student natural join takes) \n" +
+            "natural join (select * from teaches where teacher_id='0002') a ";
 
 
 }

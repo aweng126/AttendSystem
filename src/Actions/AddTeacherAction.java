@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by kingwen on 2016/9/14.
  */
-@WebServlet(urlPatterns = "/adminAddTeacher",name ="0")
+@WebServlet(urlPatterns = "/adminAddTeacher")
 public class AddTeacherAction extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,9 +24,14 @@ public class AddTeacherAction extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Teacher teacher= FormTrans.getTeacher(req);
 
-        teacher.save();
-        System.out.println("teacher save");
-        resp.getWriter().write("2");
+        int i=teacher.save();
+        resp.setCharacterEncoding("UTF-8");
+
+        if(i==1){
+            resp.getWriter().write("2");
+        }else {
+            resp.getWriter().write("0");
+        }
 
     }
 

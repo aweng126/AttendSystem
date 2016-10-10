@@ -1,7 +1,10 @@
 package Utils;
 
+import Constants.OtherConstants;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.ResultSet;
 
 /**
  * Created by kingwen on 2016/10/6.
@@ -40,4 +43,29 @@ public class CookieDetail {
      }
      return stu_id;
  }
+
+ public static String getRedirectFrom(HttpServletRequest req){
+     Cookie[] cookie=req.getCookies();
+     String from="";
+     for(Cookie cookie1:cookie){
+         if("from".equals(cookie1.getName())){
+             from=cookie1.getValue();
+         }
+     }
+
+     if("sign".equals(from)){
+
+         return OtherConstants.getUrl(OtherConstants.getSignCourse());
+
+     }else if("choose".equals(from)){
+          return OtherConstants.getUrl(OtherConstants.getChooseCourse());
+     }else {
+         System.out.println("OtherConstants 的 getRedirect sign from ");
+         return null;
+     }
+
+ }
+
+
+
 }

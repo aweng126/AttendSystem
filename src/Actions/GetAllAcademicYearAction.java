@@ -26,6 +26,7 @@ public class GetAllAcademicYearAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<AcademicYear> list=AcademicYear.getAllAcademicYears();
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(list).toString());
     }
 

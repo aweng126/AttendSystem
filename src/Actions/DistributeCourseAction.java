@@ -29,6 +29,7 @@ public class DistributeCourseAction extends HttpServlet{
         int academic_id=Integer.parseInt(req.getParameter("academic_id"));
         Teaches teaches=new Teaches(teacher_id,course_id,room_id,time_id,academic_id);
         int i=teaches.save();
+        resp.setCharacterEncoding("UTF-8");
         if(i==1){
             resp.getWriter().write("1");
         }else {

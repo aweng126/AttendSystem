@@ -31,14 +31,14 @@ public class GetTeacherInfoAction extends HttpServlet {
 
         teacher_id= CookieDetail.getTeacherIdFromReq(req);
 
-      List<Teacher> theTeacher= Teacher.getTeacherInfo(teacher_id);
-
+       List<Teacher> theTeacher= Teacher.getTeacherInfo(teacher_id);
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(JSONArray.fromObject(theTeacher).toString());
     }
 
-  /*  public static void main(String[] args) {
+    public static void main(String[] args) {
 
         System.out.println(Teacher.getTeacherInfo("0001"));
 
-    }*/
+    }
 }

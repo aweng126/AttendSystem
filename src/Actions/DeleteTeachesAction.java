@@ -22,6 +22,7 @@ public class DeleteTeachesAction extends HttpServlet {
 
         Teaches teaches=new Teaches(course_id,teacher_id);
         int i =teaches.delete();
+        resp.setCharacterEncoding("UTF-8");
         if(i==1){
             resp.getWriter().write("1");
         }else {

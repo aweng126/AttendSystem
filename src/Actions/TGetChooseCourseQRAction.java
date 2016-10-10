@@ -24,16 +24,24 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/tGetChooseCourseQR")
 public class TGetChooseCourseQRAction extends HttpServlet{
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String teacher_id= CookieDetail.getTeacherIdFromReq(req);
         String course_id=req.getParameter("course_id");
 
+        System.out.println("tGetChooseCourse"+teacher_id+"  "+course_id);
+
         Teaches teaches = Teaches.getTeaches(teacher_id,course_id);
+
+        System.out.println("teaches "+teaches.toString());
+
         String chooseCourseReq= FormTrans.teachesToStringReq(teaches);
 
+        System.out.println("chooseCourseReq "+chooseCourseReq);
         //得到当前所在目录
         String rootpath=QrConstants.getRootPath(getServletContext().getRealPath(File.separator));
+
+        System.out.println("rootPath"+rootpath);
 
         /**
          * 接下来是生成二维码图片的代码
@@ -43,19 +51,22 @@ public class TGetChooseCourseQRAction extends HttpServlet{
 
         try {
             new QRCodeFactory().CreatQrImage(chooseCourseReq, QrConstants.QR_IMG_FORMAT, outFileUri, logUri,QrConstants.QR_IMG_SIZE);
+            System.out.println("choosechourse*****************************");
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (WriterException e) {
             e.printStackTrace();
         }
-
         /**
          * 保存路径的发送
          */
-        String ChooseCourseQRPath="resources/imgs/"+QrConstants.CHOOSECOURSE_NAME;
-        //返回图片的相对地址
+        String ChooseCourseQRPath=QrConstants.getQrPath(QrConstants.CHOOSECOURSE_NAME);
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(ChooseCourseQRPath);
 
     }
 
 }
+
+

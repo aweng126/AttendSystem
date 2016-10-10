@@ -39,7 +39,7 @@ public class SSignCourseAction extends HttpServlet{
             Student student=Student.getStudentById(stu_id);
             String course_id=req.getParameter("course_id");
             int j=Sign.save(student,course_id);
-
+            resp.setCharacterEncoding("UTF-8");
             if(j==1){
                 resp.getWriter().write("1");
             }else{

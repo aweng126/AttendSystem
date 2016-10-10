@@ -42,6 +42,7 @@ public class SChooseCourseAction extends HttpServlet {
 
             Takes takes=new Takes(stu_id,course_id,room_id,time_id,acadyear_id,0);
             int i=takes.save();
+            resp.setCharacterEncoding("UTF-8");
             if(i==1){
                 resp.getWriter().write("1");
             }else {

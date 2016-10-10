@@ -22,6 +22,7 @@ public class TAddScoreAction  extends HttpServlet{
         String course_id=req.getParameter("course_id");
         int score=Integer.parseInt(req.getParameter("score"));
         int i= Takes.AddScore(score,stu_id,course_id);
+        resp.setCharacterEncoding("UTF-8");
         if(i==1){
             resp.getWriter().write("1");
         }else {

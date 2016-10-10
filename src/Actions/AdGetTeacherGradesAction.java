@@ -22,6 +22,7 @@ public class AdGetTeacherGradesAction extends HttpServlet {
 
         String teacher_id=req.getParameter("teacher_id");
         List<GradeClass> mgc=GradeClass.getMyGrade(teacher_id);
+        resp.setCharacterEncoding("UTF-8");
        resp.getWriter().write(JSONArray.fromObject(mgc).toString());
 
     }

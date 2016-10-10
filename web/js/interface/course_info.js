@@ -14,6 +14,9 @@ $(document).ready(function(){
 	$("#add_teacher_li").on("click",function(){
 		AddTeach();
 	});
+	$("#check_allocation_li").on("click",function(){
+		showAllocation();
+	});
 });
 
 function showForm(cnode,sid){
@@ -35,12 +38,14 @@ function allocationCourse(){
 	$("#allocate__course_id").on("click",function(){
 		$(this).empty();
 		requestAllCourseId();
-		$(this).on("change",function(){
+		
+	});
+	$("#allocate__course_id").on("change",function(){
 			var t = $(this).val();
 			var name = $("#allocate__course_id option[value=t]").attr('data-cname');
 			$("#allocate_course_name").val(name);
+			$("#allocate_course_name").attr("readonly","true");
 		});
-	});
 	$("#allocate_classroom_id").on("click",function(){
 		$(this).empty();
 		requestClassroomId();
@@ -162,6 +167,8 @@ function requestClassroomId(){
 	});
 }
 
+
+
 /********得到学年信息
 /adminGetAcademicYearList
 Get
@@ -182,7 +189,7 @@ function requestCourseTerm(){
 			console.log(data);
 			var classroom;
 			for(var i =0;i<data.length;i++){
-				term = data[i].ecadyear+"the number of"+data[i].term;
+				term = data[i].ecadyear+"第"+data[i].term+"学期";
 				showOption($("#allocate__course_term"),term,data[i].yearid);
 			}
 		}
@@ -395,7 +402,67 @@ function AddClassRoom(){
 }
 
 
+
+
+
+/********************查看分配信息***************************/
+function showAllocation(){
+	$(".pop-dialog").css("display","none");
+	$("#show_allocation").css("display","block");
+	$.ajax({
+		type:"get",
+		url:"/adminGetTeachInfo",
+		async:true,
+		success:function(data){
+				handlerData(data);
+		}
+	});
+	function handlerData(data){
+		data = JSON.parse(data);
+		$(".table tbody").empty();
+		console.log(data);
+		for(var i = 0;i<data.length;i++){
+			showTable(data[i].course_id,data[i].course_name,data[i].course_credit,data[i].teacher_id,data[i].teacher_name,data[i].dept_name);
+		}
+		$(".operate").on("click",function(){
+			if(confirm("确定删除该课程")){
+				var cid = $(this).siblings(".cid").text();
+				var tid  = $(this).siblings(".tid").text();
+				
+				var data_info = {"course_id":cid,"teacher_id":tid};
+				$.ajax({
+					type:"post",
+					url:"/adminDeleteTeaches",
+					async:true,
+					data:data_info,
+					success:function(data){
+						if(data = '1'){
+							alert("删除成功");
+						}else{
+							alert("删除失败");
+						}
+					},
+					error:function(){
+						alert("删除失败errror");
+					}
+				});
+				
+			}
+		});
+		
+	}
+}
+
+
+
 function showOption(pnode,cid,cname){
 	var sContent ='<option value="'+cid+'" data-cname="'+cname+'">'+cid+'</option>';
 	$(pnode).append(sContent);
+}
+
+function showTable(cid,cname,credit,tid,tname,dname){
+	var sContent ='<tr class="first"><td class="cid">'+cid+'</td><td>'+cname+'</td><td>'+
+	credit+'</td>'+'<td class="tid">'+
+	tid+'</td><td>'+tname+'</td><td>'+dname+'</td><td class="operate">删除</td></tr>';
+	$(".table tbody").append(sContent);
 }

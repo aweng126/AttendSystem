@@ -25,6 +25,7 @@ public class AdRequestAttendByWeek extends HttpServlet {
           String course_id=req.getParameter("course_id");
 
          List<AttendRate> list=AttendRate.getAttendRate(mgrade,mclass,course_id);
+         resp.setCharacterEncoding("UTF-8");
          resp.getWriter().write(JSONArray.fromObject(list).toString());
 
     }

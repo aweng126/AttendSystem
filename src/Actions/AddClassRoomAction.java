@@ -16,7 +16,7 @@ import java.util.List;
  * Created by kingwen on 2016/10/4.
  */
 
-@WebServlet(urlPatterns = "/adminAddClassRoom" , name = "classroom")
+@WebServlet(urlPatterns = "/adminAddClassRoom" )
 public class AddClassRoomAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,6 +31,8 @@ public class AddClassRoomAction extends HttpServlet {
 
         ClassRoom room=new ClassRoom(building,roomnum);
         int i =room.save();
+
+        resp.setCharacterEncoding("UTF-8");
 
         if(i==1){
             resp.getWriter().write("1");

@@ -1,6 +1,8 @@
 package Beans;
 import Constants.SignSqlStatement;
 import Utils.DB;
+import Utils.TimeUtils;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,36 @@ public class CheckSign {
     private String stu_grade;
     private String stu_class;
     private Timestamp signtime;
+
+    private int current_week;
+
+    public int getCurrent_week() {
+        return current_week;
+    }
+
+    public void setCurrent_week(int current_week) {
+        this.current_week = current_week;
+    }
+
+    public int getSign_week() {
+        return sign_week;
+    }
+
+    public void setSign_week(int sign_week) {
+        this.sign_week = sign_week;
+    }
+
+    private int sign_week;
+
+    private int attendRate;
+
+    public int getAttendRate() {
+        return attendRate;
+    }
+
+    public void setAttendRate(int attendRate) {
+        this.attendRate = attendRate;
+    }
 
     public  CheckSign(){}
     public CheckSign(String stu_id, String stu_name, String stu_grade, String stu_class, Timestamp signtime) {
@@ -78,6 +110,7 @@ public class CheckSign {
             statement.setString(1,stu_id);
             statement.setString(2,course_id);
             rs=statement.executeQuery();
+            int i=1;
             while(rs.next()){
                 CheckSign sign=new CheckSign();
                 sign.setStu_id(rs.getString("stu_id"));
@@ -85,7 +118,10 @@ public class CheckSign {
                 sign.setStu_class(rs.getString("stu_class"));
                 sign.setStu_grade(rs.getString("stu_grade"));
                 sign.setSigntime(rs.getTimestamp("signtime"));
-
+                sign.setSign_week(rs.getInt("sign_week"));
+                sign.setCurrent_week(TimeUtils.getCurrentWeek());
+                sign.setAttendRate(100*i/ TimeUtils.getCurrentWeek());
+                i++;
                 signlist.add(sign);
             }
         } catch (SQLException e) {
@@ -95,9 +131,7 @@ public class CheckSign {
             DB.closeConn(conn);
         }
         return signlist;
-
     }
-
 
     @Override
     public String toString() {
@@ -107,6 +141,9 @@ public class CheckSign {
                 ", stu_grade='" + stu_grade + '\'' +
                 ", stu_class='" + stu_class + '\'' +
                 ", signtime=" + signtime +
+                ", current_week=" + current_week +
+                ", sign_week=" + sign_week +
+                ", attendRate=" + attendRate +
                 '}';
     }
 }

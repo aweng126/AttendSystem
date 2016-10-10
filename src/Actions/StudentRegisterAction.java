@@ -43,6 +43,7 @@ public class StudentRegisterAction extends HttpServlet {
 
             String url= CookieDetail.getRedirectFrom(req);
             resp.sendRedirect(url);
+            resp.setCharacterEncoding("UTF-8");
             resp.getWriter().write("1");
         }else {
             resp.getWriter().write("0");

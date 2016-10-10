@@ -16,16 +16,13 @@ import java.io.*;
  * Created by kingwen on 2016/10/6.
  */
 @WebServlet(urlPatterns = "/tGetSignQR")
-
 public class TGetSignQRAction extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String course_id=req.getParameter("course_id");
-
         String rootpath=QrConstants.getRootPath(getServletContext().getRealPath(File.separator));
         String signQrContent= FormTrans.courseidToStringReq(course_id);
-        System.out.println("signQrContent"+signQrContent);
 
         /**
          * 接下来是生成二维码图片的代码
@@ -44,6 +41,8 @@ public class TGetSignQRAction extends HttpServlet {
          * 保存路径的发送
          */
         String signQRPath=QrConstants.getQrPath(QrConstants.SIGN_NAME);
+        System.out.println("signQrPath"+signQRPath);
+        resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(signQRPath);
 
     }

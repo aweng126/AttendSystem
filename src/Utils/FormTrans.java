@@ -40,7 +40,7 @@ public class FormTrans {
         String teacher_id=request.getParameter("teacher_id");
         String teacher_name=request.getParameter("teacher_name");
         String dept_name=request.getParameter("dept_name");
-        String teacher_isadmin=request.getParameter("teacher_isadmin");
+        String teacher_isadmin=request.getParameter("isadmin");
 
         teacher=new Teacher(teacher_id,teacher_name,teacher_isadmin,dept_name);
 

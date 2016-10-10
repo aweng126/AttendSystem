@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>课堂签到管理系统</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/bootstrap-wysihtml5.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/teacherstyle.css"/>
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/form-showcase.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="brand" href="index.html"><img src="img/logo.png" /></a>
+
+            <ul class="nav pull-right">                
+                <li class="hidden-phone">
+                    <input class="search" type="text" />
+                </li>
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-warning-sign"></i>
+                        <span class="count">8</span>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="notifications">
+                                <h3>You have 6 new notifications</h3>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 18 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-envelope-alt"></i> New message from Alejandra
+                                    <span class="time"><i class="icon-time"></i> 28 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 49 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-download-alt"></i> New order placed
+                                    <span class="time"><i class="icon-time"></i> 1 day.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <img src="img/contact-img.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, but the majority have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <img src="img/contact-img2.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 26 min.</span>
+                                </a>
+                                <a href="#" class="item last">
+                                    <img src="img/contact-img.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, but the majority have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 48 min.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all messages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        Your account
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">Personal info</a></li>
+                        <li><a href="#">Account settings</a></li>
+                        <li><a href="#">Billing</a></li>
+                        <li><a href="#">Export your data</a></li>
+                        <li><a href="#">Send feedback</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="personal-info.html" role="button">
+                        <i class="icon-cog"></i>
+                    </a>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="signin.html" role="button">
+                        <i class="icon-share-alt"></i>
+                    </a>
+                </li>
+            </ul>            
+        </div>
+    </div>
+    <!-- end navbar -->
+
+   <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <span>到勤率</span>
+                </a>
+            </li>           
+
+             <li id="stu_info_li">
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-edit"></i>
+                    <span>学生信息</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+               
+            </li>
+            
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-reorder"></i>
+                    <span>课程详情</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu" id="course_info_ul">
+                    <li id="course_list_li">课程表</li>
+                </ul>
+            </li>
+           
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+        
+        <!-- settings changer -->
+        <div class="skins-nav">
+            <a href="#" class="skin first_nav selected">
+                <span class="icon"></span><span class="text">Default</span>
+            </a>
+            <a href="#" class="skin second_nav" data-file="css/skins/dark.css">
+                <span class="icon"></span><span class="text">Dark skin</span>
+            </a>
+        </div>
+        
+        
+  <!--——————————————————————————-->
+        <div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+                <div class="row-fluid form-wrapper">
+                    <!-- left column -->
+                    <!--展示课程列表-->
+                    <div class=" full span8 t_info_wrap" id="show_course_list">
+                        <div class="body">                        
+	                           	 <table class="table table-hover" id="course_list">
+		                            <thead>
+		                                <tr>
+		                                    <th class="course_info">
+		                                        <span class="line"></span>
+		                                       	课程号
+		                                    </th>
+		                                    <th class="course_name">
+		                                        <span class="line"></span>课程名称
+		                                    </th>
+		                                    <th class="course_credit">
+		                                        <span class="line"></span>学分
+		                                    </th>
+		                                   
+		                                    <th class="allocation_info">
+		                                        <span class="line"></span>操作
+		                                    </th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <!-- row -->
+		                                <tr class="first">
+		                                    <td>sd1</td>
+		                                   	<td>数据库</td>
+		                                   	<td>3</td>
+		                                   	<td class=" show_course_detail">查看详情</td>
+		                                </tr>
+		                                <tr class="first">
+		                                   <td>sd1</td>
+		                                   	<td>数据库</td>
+		                                   	<td>3</td>
+		                                   	<td class="show_course_detail">查看详情</td>
+		                                </tr>
+		                                <tr class="first">
+		                                    <td>sd1</td>
+		                                   	<td>数据库</td>
+		                                   	<td>3</td>
+		                                   	<td class="show_course_detail">查看详情</td>
+		                                </tr>
+		                                
+		                            </tbody>
+		                        </table>
+		                    </div>
+	                    </div>
+	                    
+	                    
+	                    <!--展示课程细节-->
+	                    <div  id="show_course_detail" class="t_info_wrap">
+	                    	<h3>课程详细信息</h3>
+	                    	<div class="pop-dialog full span5">
+	                            <div class="pointer">
+	                                <div class="arrow"></div>
+	                                <div class="arrow_border"></div>
+	                            </div>
+	                            <div class="body">                        
+	                                <div class="settings">
+	                                    <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+	                                    <div class="items">
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                           	 课程号：
+	                                           	<i class="detail_cid">sad</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                          	 课程名称：
+	                                            <i class="detail_cname">数据库</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                             	学分：
+	                                            <i class="detail_credit">3</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	教师id：
+	                                           <i class="detail_teacherid">345</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	教师名字：
+	                                           <i class="detail_teachername">陈柳娟</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	教师性别：
+	                                           <i class="detail_teachersex">女</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	开课学院：
+	                                           <i class="detail_deptname">软件学院</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	上课教室：
+	                                           <i class="detail_classroom">5-201</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	学年：
+	                                           <i class="detail_acayear">2014</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	学期：
+	                                           <i class="detail_term">1</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	星期：
+	                                           <i class="detail_week">3</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	节次：
+	                                           <i class="detail_order">2</i>
+	                                        </div>
+	                                        <div class="item">
+	                                            <i class="icon-reorder"></i>
+	                                            	上课时间：
+	                                           <i class="detail_time"></i>
+	                                        </div>
+	                                       
+	                                    </div>
+	                                </div>
+	                            </div>
+	                             <div id="to_select_btn" class="btn-flat">生成选课二维码</div>
+	                         	 <div id="to_signin_btn" class="btn-flat">生成签到二维码</div>
+	                        </div>
+	                    </div>
+	                     
+	                    
+	                    
+	                    <!--展示学生信息-->
+	                    <div id="show_student_list" class="t_info_wrap">
+	                        <div class="body">                        
+	                            <div class="glow" >
+	                                <label>课程号</label>
+	                                 <select id="teacher_course" >
+	                                    <option value="c1" data-id="c1">14数据库</option>
+	                                    <option value="2" data-id="c1">15数据结构</option>
+	                                    <option value="3" data-id="c1">数值计算</option>
+	                                    <option value="4" data-id="c1">数字媒体</option>
+	                                </select>
+                           </div>
+	                           	<table class="table table-hover">
+		                        <thead>
+		                            <tr>
+		                                <th class="span4 sortable">
+		                                                                         姓名
+		                                </th>
+		                                <th class="span3 sortable">
+		                                    <span class="line"></span>性别
+		                                </th>
+		                                  <th class="span3 sortable">
+		                                    <span class="line"></span>学号
+		                                </th>
+		                                <th class="span2 sortable">
+		                                    <span class="line"></span>年级
+		                                </th>
+		                                 <th class="span2 sortable">
+		                                    <span class="line"></span>班级
+		                                </th>
+		                                 <th class="span2 sortable">
+		                                    <span class="line"></span>学院
+		                                </th>
+		                                 <th class="span2 sortable">
+		                                    <span class="line"></span>操作
+		                                </th>
+		                                
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                        <!-- row -->
+		                        <tr class="first">
+		                        	
+		                            <td>
+		                                <img src="img/contact-img.png" class="img-circle avatar hidden-phone" />
+		                                <a href="user-profile.html" class="name">李庆文</a>
+		                                <span class="subtext">Graphic Design</span>
+		                            </td>
+		                            <td>
+		                                                                 男
+		                            </td>
+		                            <td>
+		                                201400301153
+		                            </td>
+		                            <td >
+		                                2014
+		                            </td>
+		                             <td>
+		                                6
+		                            </td>
+		                            <td>
+		                                                               软件学院
+		                            </td>
+		                             <td class="del_stu">
+		                                                               删除
+		                            </td>
+		                           
+		                        </tr>
+		                       <!-- row -->
+		                        <tr class="first">
+		                            <td>
+		                                <img src="img/contact-img2.png" class="img-circle avatar hidden-phone" />
+		                                <a href="user-profile.html" class="name">李庆文</a>
+		                                <span class="subtext">Graphic Design</span>
+		                            </td>
+		                            <td>
+		                                                                 男
+		                            </td>
+		                            <td>
+		                                201400301153
+		                            </td>
+		                            <td >
+		                                2014
+		                            </td>
+		                             <td>
+		                                6
+		                            </td>
+		                            <td>
+		                                                               软件学院
+		                            </td>
+		                           <td class="del_stu">
+		                                                               删除
+		                            </td>
+		                        </tr>
+		                        
+		                        <!-- row -->
+		                        <tr class="first">
+		                            <td>
+		                                <img src="img/contact-img.png" class="img-circle avatar hidden-phone" />
+		                                <a href="user-profile.html" class="name">李庆文</a>
+		                                <span class="subtext">Graphic Design</span>
+		                            </td>
+		                            <td>
+		                                                                 男
+		                            </td>
+		                            <td>
+		                                201400301153
+		                            </td>
+		                            <td >
+		                                2014
+		                            </td>
+		                             <td>
+		                                6
+		                            </td>
+		                            <td>
+		                                                               软件学院
+		                            </td>
+		                            <td class="del_stu">
+		                                                               删除
+		                            </td>
+		                        </tr>
+		                       <!-- row -->
+		                        <tr class="first">
+		                            <td>
+		                                <img src="img/contact-img.png" class="img-circle avatar hidden-phone" />
+		                                <a href="user-profile.html" class="name">李庆文</a>
+		                                <span class="subtext">Graphic Design</span>
+		                            </td>
+		                            <td>
+		                                                                 男
+		                            </td>
+		                            <td>
+		                                201400301153
+		                            </td>
+		                            <td >
+		                                2014
+		                            </td>
+		                             <td>
+		                                6
+		                            </td>
+		                            <td>
+		                                                               软件学院
+		                            </td>
+		                           <td class="del_stu">
+		                                                               删除
+		                            </td>
+		                        </tr>
+		                        
+		                        
+		                        
+		                        <tr>
+		                            <td>
+		                                <img src="img/contact-img2.png" class="img-circle avatar hidden-phone" />
+		                                <a href="user-profile.html" class="name">李文庆</a>
+		                                <span class="subtext">Graphic Design</span>
+		                            </td>
+		                            <td>
+		                                                                 男
+		                            </td>
+		                            <td>
+		                                201400301153
+		                            </td>
+		                            <td >
+		                                2014
+		                            </td>
+		                             <td>
+		                                6
+		                            </td>
+		                            <td>
+		                                                               软件学院
+		                            </td>
+		                            
+		                        </tr>
+		                        
+		                       
+		                        
+		                        </tbody>
+	                    	</table>
+	                    	<div class="pagination pull-right">
+			                    <ul>
+			                        <li ><a href="#">&#8249;</a></li>
+			                        <li class="page_num"><a class="active" href="#">1</a></li>
+			                        <li class="page_num"><a href="#">2</a></li>
+			                        <li class="page_num"><a href="#">3</a></li>
+			                        <li class="page_num"><a href="#">4</a></li>
+			                        <li class="page_num"><a href="#">5</a></li>
+			                        <li class="page_num"><a href="#">&#8250;</a></li>
+			                    </ul>
+			                </div>
+	                    </div>
+	                    
+	                     
+                    </div>
+                    
+                    <div class="pop-dialog full span8" id="show_2dimensional_code">
+                        <div class="body"> 
+                        	<h4 id="dimensional_title"></h4>
+                            <div class="settings">
+                                <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            </div>
+                           	 <div class="img_wrap">
+                           	 	<img id="two_dimensional_code_img" src="img/bgs/landscape.jpg" />
+                           	 </div>
+	                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <!-- end main container -->
+
+	<!-- scripts for this page -->
+    <script src="js/wysihtml5-0.3.0.js"></script>
+    <script src="js/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-wysihtml5-0.0.2.js"></script>
+    <script src="js/bootstrap.datepicker.js"></script>
+    <script src="js/jquery.uniform.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/theme.js"></script>
+	<script type="text/javascript" src="js/interface/teacher_course_info.js"></script>
+    <!-- call this page plugins -->
+    <script type="text/javascript">
+        $(function () {
+
+            // add uniform plugin styles to html elements
+            $("input:checkbox, input:radio").uniform();
+
+            // select2 plugin for select elements
+            $(".select2").select2({
+                placeholder: "Select a State"
+            });
+
+            // datepicker plugin
+            $('.datepicker').datepicker().on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+
+            // wysihtml5 plugin on textarea
+            $(".wysihtml5").wysihtml5({
+                "font-styles": false
+            });
+        });
+    </script>
+
+</body>
+</html>

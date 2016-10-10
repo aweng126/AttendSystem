@@ -73,10 +73,10 @@ public class Teaches  {
         this.acadyear_id = acadyear_id;
     }
 
-public void delete(){
+public int  delete(){
     Connection conn=null;
     PreparedStatement pstmt=null;
-    Statement statement=null;
+    boolean success=true;
     try {
         conn= DB.getConnection();
         pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_DELETE);
@@ -86,16 +86,22 @@ public void delete(){
 
     } catch (SQLException e) {
         e.printStackTrace();
+        success=false;
     }finally {
         DB.closeStmt(pstmt);
         DB.closeConn(conn);
+        if(success){
+            return 1;
+        }else {
+            return 0;
+        }
     }
 }
 
-    public void save(){
+    public int  save(){
         Connection conn=null;
         PreparedStatement pstmt=null;
-        Statement statement=null;
+        boolean success=true;
         try {
             conn= DB.getConnection();
             pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_INSERT);
@@ -109,9 +115,15 @@ public void delete(){
 
         } catch (SQLException e) {
             e.printStackTrace();
+            success=false;
         }finally {
             DB.closeStmt(pstmt);
             DB.closeConn(conn);
+            if(success){
+                return 1;
+            }else {
+                return 0;
+            }
         }
 
     };
@@ -127,7 +139,7 @@ public void delete(){
             pstmt=DB.getPStmt(conn, TeachesSqlStatement.TEACHES_SEARCH);
             pstmt.setString(1,teachesid);
             pstmt.setString(2,courseid);
-            pstmt.executeQuery();
+            rs= pstmt.executeQuery();
 
             while (rs.next()){
                 teaches.setTeaches_id(rs.getString("teacher_id"));

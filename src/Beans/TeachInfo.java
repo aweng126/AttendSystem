@@ -53,6 +53,9 @@ public class TeachInfo  {
         this.course_name = course_name;
     }
 
+    public int getCourse_credit() {
+        return course_credit;
+    }
 
     public String getTeacher_id() {
         return teacher_id;

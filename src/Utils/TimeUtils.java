@@ -46,6 +46,14 @@ public class TimeUtils {
      return  weekOfYear-beginWeekOfYear;
     }
 
+    /**
+     * 得到当前周（下学期）
+     * @return
+     */
+    public static int getCurrentWeek(){
+        return  getWeekByData(TimeUtils.getCurrentTimeStamp());
+    }
+
 
     public static void main(String[] args) {
         /**
@@ -54,5 +62,8 @@ public class TimeUtils {
         Timestamp now = TimeUtils.getCurrentTimeStamp();
         System.out.println( TimeUtils.getWeekByData(now));
     }
+
+
+
 
 }

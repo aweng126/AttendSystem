@@ -78,9 +78,10 @@ public class ClassRoom {
 
 
 
-    public void save(){
+    public int save(){
        Connection conn= null;
        PreparedStatement pStmt=null;
+        boolean success=true;
        try {
            conn= DB.getConnection();
            pStmt=DB.getPStmt(conn, ClassRoomSqlStatement.CLASSROOM_INSERT);
@@ -89,9 +90,15 @@ public class ClassRoom {
            pStmt.executeUpdate();
        } catch (SQLException e) {
            e.printStackTrace();
+           success=false;
        }finally {
            DB.closeStmt(pStmt);
            DB.closeConn(conn);
+           if(success){
+               return  1;
+           }else {
+               return 0;
+           }
        }
    }
 

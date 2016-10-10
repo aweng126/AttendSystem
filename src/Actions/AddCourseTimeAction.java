@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by kingwen on 2016/10/4.
  */
-@WebServlet(urlPatterns = "/adminAddCourseTime", name = "addCourseTime")
+@WebServlet(urlPatterns = "/adminAddCourseTime")
 public class AddCourseTimeAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,6 +30,8 @@ public class AddCourseTimeAction extends HttpServlet {
         }else {
             success=false;
         }
+
+        resp.setCharacterEncoding("UTF-8");
 
         if(success){
             resp.getWriter().write("1");
