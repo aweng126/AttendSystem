@@ -14,23 +14,25 @@ import java.util.List;
 /**
  * Created by kingwen on 2016/10/9.
  */
-@WebServlet(urlPatterns = "/requsetAttendByWeek")
+@WebServlet(urlPatterns = "/requestAttendByWeek")
 public class AdRequestAttendByWeek extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-          String mgrade=req.getParameter("sign_grade");
-          String mclass=req.getParameter("sign_class");
+          String mgrade=req.getParameter("grade_id");
+          String mclass=req.getParameter("class_id");
           String course_id=req.getParameter("course_id");
 
+        System.out.println("requsetAttendByWeek"+mgrade+"******"+mclass+"*******    "+course_id);
+
          List<AttendRate> list=AttendRate.getAttendRate(mgrade,mclass,course_id);
-         resp.setCharacterEncoding("UTF-8");
+         //resp.setCharacterEncoding("UTF-8");
          resp.getWriter().write(JSONArray.fromObject(list).toString());
 
     }
 
     public static void main(String[] args) {
-        System.out.println(AttendRate.getAttendRate("6","2014","0002"));
+        AttendRate.getAttendRate("6","2014","0002").toString();
     }
 }

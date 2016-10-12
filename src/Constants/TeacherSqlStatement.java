@@ -42,7 +42,7 @@ public class TeacherSqlStatement {
     /**
      * 教师得到自己的教课信息
      */
-   public static final String TEACHER_GETMTEACH="select * from teaches natural join course where teacher_id=?";
+   public static final String TEACHER_GETMTEACH="select * from teaches natural join course where teacher_id=? ";
 
 
     /**
@@ -77,10 +77,22 @@ public class TeacherSqlStatement {
 
 
     /**
+     * 查看选课学生数目
+     */
+
+    public static final String TEACHER_CHECKSTUDENT_COUNT ="select count(*) as studentpage from  student, takes where takes.course_id=? and takes.stu_id=student.stu_id order by stu_grade  ";
+
+    /**
      * 查看老师教授的选课同学的班级号和年级号
      */
      public static final String TEACHER_GET_GREDEANDCLASS="select stu_class,stu_grade from (student natural join takes) \n" +
-            "natural join (select * from teaches where teacher_id='0002') a ";
+            "natural join (select * from teaches where teacher_id=?) a ";
 
+
+    /**
+     * 查看老师教授的选课同学的班级号和年级号
+     */
+    public static final String TEACHER_GET_GREDEANDCLASS_COURSE=" select stu_class,stu_grade from (student natural join (select * from takes where course_id=?) b\n" +
+            "     natural join (select * from teaches where teacher_id=?) a )";
 
 }

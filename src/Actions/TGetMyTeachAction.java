@@ -29,6 +29,8 @@ public class TGetMyTeachAction extends HttpServlet {
 
         String teacher_id = CookieDetail.getTeacherIdFromReq(req);
 
+        String course_id=req.getParameter("course_id");
+
         List<Course>  courses = Teacher.getMyTeach(teacher_id);
 
         resp.setCharacterEncoding("UTF-8");

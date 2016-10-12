@@ -43,5 +43,17 @@
     display: inline-block;
     position: absolute;
     width: 400px;
+	left: 30px;
+	margin-top: 40px;
 }
 
+#attend_wrap .item .check{
+	margin-left: 10px;
+
+	margin-bottom: 5px;
+}
+#pad-wrapper .chart_title{
+	position: relative;
+	left: 73px;
+	top: 46px;
+}

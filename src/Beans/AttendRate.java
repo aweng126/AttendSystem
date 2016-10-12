@@ -124,7 +124,7 @@ private int attendRate;
             }
 
 
-            System.out.println("getAttendRate chooseSum"+choosesum);
+            System.out.println("getAttendRate chooseSum"+ choosesum);
 
 
             /**
@@ -144,7 +144,11 @@ private int attendRate;
                 if(rs.next()){
                     System.out.println(rs.toString());
                     attendsum=rs.getInt("attendsum");
-                    int attendRate=attendsum*100/choosesum;
+                    int attendRate=0;
+                    if(choosesum>0){
+                        attendRate=attendsum*100/choosesum;
+                    }
+
                     AttendRate attendRate1=new AttendRate(i,attendRate);
                     list.add(attendRate1);
                 }
@@ -173,6 +177,9 @@ private int attendRate;
         List<Integer> lists=new ArrayList<>();
 
         int currentweek=TimeUtils.getCurrentWeek();
+
+        System.out.println("current"+currentweek);
+
         switch (way){
             case -1:
                 if(firstshoweek<=1&&currentweek<=7){
@@ -210,11 +217,11 @@ private int attendRate;
      * @return 开始到结束
      */
     private static List<Integer> getWeekList(int i,int j) {
-        int first;
+
         int last=j;
-      List<Integer> list=new ArrayList<>();
-        for(first=i;i<last;first++ ){
-            list.add(i);
+         List<Integer> list=new ArrayList<>();
+        for(int k=i;k<last;k++ ){
+            list.add(k);
         }
         return list;
     }

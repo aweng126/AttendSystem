@@ -14,20 +14,26 @@ import java.util.List;
 /**
  * Created by kingwen on 2016/10/9.
  */
-@WebServlet(urlPatterns = "/requestAttendBackward")
+
+@WebServlet(urlPatterns = "/requestAttendByWeekBackward1")
 public class AdRequestAttendByWeekBackward extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String mgrade=req.getParameter("sign_grade");
-        String mclass=req.getParameter("sign_class");
+        System.out.println("*****************************");
+
+        String mgrade=req.getParameter("grade_id");
+        String mclass=req.getParameter("class_id");
         String course_id=req.getParameter("course_id");
+
         int firstweek=Integer.parseInt(req.getParameter("display_firstweek"));
 
+        System.out.println("dopost"+mgrade+"  "+mclass+" "+course_id+" "+firstweek);
+
         List<AttendRate> list=AttendRate.getAttendRateBackward(mgrade,mclass,course_id,firstweek);
-        resp.setCharacterEncoding("UTF-8");
+
         resp.getWriter().write(JSONArray.fromObject(list).toString());
 
     }
-
 }

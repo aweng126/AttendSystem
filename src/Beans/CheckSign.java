@@ -124,6 +124,20 @@ public class CheckSign {
                 i++;
                 signlist.add(sign);
             }
+            //如果始终没有签到数据，那么就返回空数值
+            if(i==1){
+                CheckSign sign=new CheckSign();
+                sign.setStu_id(null);
+                sign.setStu_name(null);
+                sign.setStu_class(null);
+                sign.setStu_grade(null);
+                sign.setSigntime(null);
+                sign.setSign_week(0);
+                sign.setCurrent_week(TimeUtils.getCurrentWeek());
+                sign.setAttendRate(0);
+                signlist.add(sign);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }finally{

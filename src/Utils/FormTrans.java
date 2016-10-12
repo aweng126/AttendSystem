@@ -48,14 +48,14 @@ public class FormTrans {
     }
 
 
-    public static final String ip=" 192.168.1.101";
+    public static final String ip="121.250.222.14";
 
     /**
      * 将teaches的数据写入到StringReq中
      */
     public static String teachesToStringReq(Teaches teaches){
         String stringReq=ip+":8080/sChooseCourse?course_id="+teaches.getCourse_id()
-                +"&room_id="+teaches.getRoom_id()+"&time_id"+teaches.getTime_id() +
+                +"&room_id="+teaches.getRoom_id()+"&time_id="+teaches.getTime_id() +
                 "&acadyear_id="+teaches.getAcadyear_id();
         return  stringReq;
     }

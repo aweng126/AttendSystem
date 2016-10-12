@@ -34,13 +34,17 @@ public class CookieDetail {
      * @return
      */
  public  static String getStudentIdFromReq(HttpServletRequest req){
-     String stu_id=null;
-     Cookie[] cookie=req.getCookies();
-     for(Cookie cookie1:cookie){
-         if(cookie1.getName().equals("stu_id")){
-             stu_id=cookie1.getValue();
+     String stu_id="";
+
+     if(req.getCookies()!=null){
+         Cookie[] cookie=req.getCookies();
+         for(Cookie cookie1:cookie){
+             if(cookie1.getName().equals("stu_id")){
+                 stu_id=cookie1.getValue();
+             }
          }
      }
+
      return stu_id;
  }
 
@@ -52,13 +56,10 @@ public class CookieDetail {
              from=cookie1.getValue();
          }
      }
-
      if("sign".equals(from)){
-
-         return OtherConstants.getUrl(OtherConstants.getSignCourse());
-
+         return OtherConstants.getSignCourse();
      }else if("choose".equals(from)){
-          return OtherConstants.getUrl(OtherConstants.getChooseCourse());
+          return OtherConstants.getChooseCourse();
      }else {
          System.out.println("OtherConstants 的 getRedirect sign from ");
          return null;

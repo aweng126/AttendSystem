@@ -45,6 +45,42 @@ public class GradeClass {
         this.mclass = mclass;
     }
 
+
+
+
+    public static List<GradeClass> getMyGrade(String teacher_id,String course_id){
+        List<GradeClass> list=new ArrayList<GradeClass>();
+        Connection conn=null;
+        ResultSet rs=null;
+
+        try {
+            conn= DB.getConnection();
+            PreparedStatement statement=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_GET_GREDEANDCLASS_COURSE);
+            statement.setString(1,course_id);
+            statement.setString(2,teacher_id);
+
+            rs=statement.executeQuery();
+
+            while(rs.next()){
+                GradeClass gradeClass=new GradeClass();
+                gradeClass.setMclass(rs.getString("stu_class"));
+                gradeClass.setMgrade(rs.getString("stu_grade"));
+
+                if(!hasContaingradeClass(list,gradeClass)){
+                    list.add(gradeClass);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return list;
+
+    }
+
+
     public static List<GradeClass> getMyGrade(String teacher_id){
         List<GradeClass> list=new ArrayList<GradeClass>();
         Set<GradeClass> mgradeClass=new HashSet<>();

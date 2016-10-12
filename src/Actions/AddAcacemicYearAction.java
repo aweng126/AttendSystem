@@ -41,10 +41,12 @@ public class AddAcacemicYearAction extends HttpServlet{
 
     }
 
-    public static void main(String args[]){
+   /* public static void main(String args[]){
 
-        AcademicYear academicYear=new AcademicYear("2012-2013","2");
-        academicYear.saveYear();
+       *//* AcademicYear academicYear=new AcademicYear("2012-2013","2");
+        academicYear.saveYear();*//*
 
-    }
+        System.out.println("heheheh ");
+    }*/
+
 }

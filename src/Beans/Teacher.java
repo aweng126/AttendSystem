@@ -5,6 +5,7 @@ import Constants.TeacherSqlStatement;
 import Utils.DB;
 import Constants.SqlStatement;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -194,6 +195,33 @@ public class Teacher {
     return  list;
     }
 
+    public static  int getStudentPages(String courseid){
+        int studentNum=0;
+        Connection conn=null;
+        ResultSet rs=null;
+        try {
+            conn=DB.getConnection();
+            PreparedStatement statement=DB.getPStmt(conn,TeacherSqlStatement.TEACHER_CHECKSTUDENT_COUNT);
+            statement.setString(1,courseid);
+            rs=statement.executeQuery();
+            if(rs.next()){
+               studentNum=rs.getInt("studentpage");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DB.closeRS(rs);
+            DB.closeConn(conn);
+        }
+        return  studentNum-studentNum/7*7>0?studentNum/7+1:studentNum/7 ;
+
+
+
+
+
+    }
+
+
     public static List<Student>  getStudentsWithCourse (String courseid,int page){
         List<Student> studentlist=new ArrayList<Student>();
         Connection conn=null;
@@ -245,6 +273,7 @@ public class Teacher {
             conn=DB.getConnection();
             pstmt=DB.getPStmt(conn, TeacherSqlStatement.TEACHER_GETMTEACH);
             pstmt.setString(1,teacherid);
+
             rs=pstmt.executeQuery();
             while (rs.next()){
                 Course course=new Course();

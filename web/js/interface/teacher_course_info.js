@@ -5,12 +5,48 @@ $(document).ready(function(){
 	$("#stu_info_li").on("click",function(){
 		showStuInfoTables();
 	});
+	$(".pagination").css("display","none");
 	
 });
 
 /******点击删除刷新还没有写，分页还没有写********************/
 
 
+/************************得到分页**************/
+function getPage(data_info){
+	$.ajax({
+		type:"post",
+		url:"/tGetStudentPages",
+		async:true,
+		data:data_info,
+		success:function(data){
+			handlerData(data);
+		}
+	});
+	function  handlerData(data) {
+		console.log(data);
+		$(".pagination").css("display","block");
+		$(".pagination ul").empty();
+		var sContent = " <li ><a class='last_page' href='#'>&#8249;</a></li>";
+		for(var i = 1;i<=data;i++){
+			if(i ==1){
+				sContent +='<li data-page='+i+' class="page_num"><a class="active" href="#">'+i+'</a></li>';
+			}else{
+				sContent +='<li data-page='+i+'class="page_num"><a  href="#">'+i+'</a></li>';
+			}
+		}
+		sContent+=' <li class="next_page"><a href="#">&#8250;</a></li>';
+
+		$(".pagination ul").append(sContent);
+		$(".page_num").on("click",function () {
+			$(".pagination ul a").removeClass("active");
+			$(this).children("a").addClass("active");
+			var page =$(this).attr("data-page");
+			var mydata_info = {"course_id":data_info.course_id,"page":page};
+			showStuInfoTables(mydata_info);
+		})
+	}
+}
 
 
 /********************查看我的课程**************
@@ -131,22 +167,28 @@ function showStuInfoTables(){
 	/*******得到该教师的课程******/
 	$.ajax({
 		type:"get",
-		url:"/tGetMyTeach   ",
+		url:"/tGetMyTeach",
 		async:true,
 		success:function(data){
 			data = JSON.parse(data);
 			var sContent='';
+			console.log(data);
 			for(var i = 0;i<data.length;i++){
-				 sContent +=' <option data-id="'+data[i].course_id+'">'+data[i].course_name+'</option>';
+				 sContent +=' <option data-id="'+data[i].course_id+'"value="'+data[i].course_name+'">'+data[i].course_name+'</option>';
 			}
 			$("#teacher_course").empty();
 			$("#teacher_course").append(sContent);
 			
-			$("#teacher_course").change(function(){
+			$("#teacher_course").on("click",function(){
 				var course_name = $(this).val();
-				var course_id = $("#teacher_course option[value=course_name]").attr('data-id');
-				var data_info={"page_id":0,"course_id":course_id};
+				console.log(course_name);
+				var course_id =  $("#teacher_course option[value='"+course_name+"']").attr('data-id');
+				console.log(course_id);
+				var data_info={"page_id":1,"course_id":course_id};
+				console.log(data_info);
+				$(".table tbody").empty();
 				showStuTables(data_info);
+				getPage({"course_id":course_id});
 			});
 		}
 	});
@@ -154,6 +196,7 @@ function showStuInfoTables(){
 
 //显示学生信息的分页表
 function showStuTables(data_info){
+	$("#show_student_list tbody").empty();
 	$.ajax({
 		type:"post",
 		url:"/tCheckStudent",
@@ -161,8 +204,10 @@ function showStuTables(data_info){
 		data:data_info,
 		success:function(data){
 			data =JSON.parse(data);
+			console.log(data);
+
 			for(var i = 0;i<data.length;i++){
-				showStuTable(data_info.course_id,[i].stu_id,dta[i].stu_name,dta[i].stu_grade,dta[i].stu_sex,dta[i].stu_class,dta[i].dept_name);
+				showStuTable(data_info.course_id,data[i].stuid,data[i].stuname,data[i].stugrade,data[i].stusex,data[i].stuclass,data[i].dept_name);
 			}
 			
 			/*******点击名字得到签到信息*****/
@@ -170,16 +215,18 @@ function showStuTables(data_info){
 				$("#attend_wrap").remove();
 				var stu_id = $(this).attr("data-stuid");
 				var course_id = $(this).parent("tr").attr("data-cid");
-				var data_info = {"stu-id":stu_id,"course_id":course_id};
-				RequestStuAttend($(".stu_name").parent("tr"),data_info);
+				var data_info = {"stu_id":stu_id,"course_id":course_id};
+				console.log(data_info);
+				RequestStuAttend($(this).parent("tr"),data_info);
 			});
 			
 			/**********删除该学生****/
 			$(".del_stu").on("click",function(){
-				if(confirm("确定该学生")){
+				if(confirm("确定删除该学生")){
 					var stu_id =  $(this).siblings(".stu_name").attr("data-stuid");
-					var data_info ={"stu_id":stu_id};
-					deleteStudent(data_info);
+					var mydata_info ={"stu_id":stu_id,"course_id":data_info.course_id};
+					deleteStudent(mydata_info,data_info);
+
 				}
 			});
 		}
@@ -201,23 +248,29 @@ function RequestStuAttend(pnode,data_info){
                                    
 	function handerData(data){
 		data = JSON.parse(data);
-		
+		console.log(data);
+
 		var sContent = '<div id="attend_wrap" class="pop-dialog full"><div class="pointer"><div class="arrow"></div>'+
-                        '<div class="arrow_border"></div></div><div class="body"><div class="settings">'+
-                        '<a href="#" class="close-icon"><i class="icon-remove-sign"></i></a><div id="stu_attend_items" class="items">'+
+                        '<div class="arrow_border"></div></div><div class="body">'+
+						'<a href="#" class="close-icon"><i class="icon-remove-sign"></i></a><h4 id="stu_rate_title" style="margin-left: 120px">签到率：'+
+			             + data[0].attendRate+'%</h4><div class="settings">'+
+                        '<div id="stu_attend_items" class="items">'+
                         '</div></div></div></div>';
         $(pnode).append(sContent);
         $(".close-icon").on("click",function(){
         	$("#attend_wrap").remove();
         });
         sContent = '';
-		for(var i = 0;i<data[0].current_week;i++){
+		for(var i = 1;i<=data[0].current_week;i++){
 			sContent +=' <div id="'+i+'" class="item"><i class="icon-reorder"></i>第'+i+
 			'周<input type="checkbox" class="check"></div>';
 		}
 		$("#stu_attend_items").append(sContent);
 			for(var i = 0;i<data.length;i++){
-				$(data[i].sign_week).children(".check").attr("checked", true);
+				if(data[i].sign_week ==0){
+					$("#"+data[i].sign_week).children(".check").attr("checked", false);
+				}
+				$("#"+data[i].sign_week).children(".check").attr("checked", true);
 			}
 		
 	}
@@ -227,7 +280,7 @@ function RequestStuAttend(pnode,data_info){
 
 /*************删除某个学生******************/
 
-function deleteStudent(data_info){
+function deleteStudent(data_info,refresh_data){
 	$.ajax({
 		type:"post",
 		url:"/tDeleteStudent",
@@ -235,7 +288,9 @@ function deleteStudent(data_info){
 		async:true,
 		success:function(data){
 			if(data =='1'){
+				showStuTables(refresh_data);
 				alert("删除成功");
+
 			}else{
 				alert("删除失败");
 			}
@@ -244,7 +299,7 @@ function deleteStudent(data_info){
 }
 
 function showStuTable(cid,sid,sname,sgrade,sex,stu_class,dname){
-	var sContent = '<tr data-cid="'+cid+'" class="first"><td class="stu_name" data-stuid="'+sid+'">'+sname+'</td><td>'+sex+'</td><td>'+cid+' </td><td >'+sgrade+
+	var sContent = '<tr data-cid="'+cid+'" class="first"><td class="stu_name" data-stuid="'+sid+'">'+sname+'</td><td>'+sex+'</td><td>'+sid+' </td><td >'+sgrade+
 		         '</td><td>'+stu_class+'</td><td>'+dname+'</td><td class="del_stu">删除</td></tr>';
 	$("#show_student_list tbody").append(sContent);
 }

@@ -19,13 +19,15 @@
 	float: left;
 	
 }
-
+.chart_title{
+	position: relative;
+	left: 73px;
+	top: 46px;
+}
 #allocation_course{
 	display: none;
 }
-#allocation_course .body{
-	height: 450px;
-}
+
 .clear{
 	clear: both;
 }
@@ -35,21 +37,15 @@
 #add_classroom{
 	display: none;
 }
-#add_classroom .body{
-	height: 200px;
-}
+
 #add_term{
 	display: none;
 }
-#add_term .body{
-	height: 200px;
-}
+
 #add_teacher{
 	display: none;
 }
-#add_teacher .body{
-	height: 400px;
-}
+
 #course_info_ul li{
 	font-weight: normal;
     font-size: 13px;

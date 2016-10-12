@@ -220,10 +220,7 @@
 
                 <!-- statistics chart built with jQuery Flot -->
                 <div class="row-fluid chart">
-                    <h4>
-                      		  周到勤率(%)
-                       
-                    </h4>
+
                       <div class="pull-right">
 
                            
@@ -239,15 +236,21 @@
                           
                             <div class="glow">
                                 <label>班级</label>
-                                 <select class="classid" >
+                                 <select id="classid"  >
                                     <option value="c1" data-id="c1">15级软件5班</option>
                                     <option value="2" data-id="c1">15级软件6班</option>
                                     <option value="3" data-id="c1">15级软件7班</option>
                                     <option value="4" data-id="c1">15级软件8班</option>
                                 </select>
                            </div>
+                          <div class="glow">
+                              <div id="refreshAttend" class="btn-flat">展示签到数据</div>
+                          </div>
                         </div>
                     <div class="span12" >
+                        <h4 class="chart_title">
+                            周到勤率(%)
+                        </h4>
                     	<div class="cbtn" id="last"></div>
        					<div class="lineChartwrap">
        						 <canvas id="lineChart"></canvas>
@@ -255,10 +258,6 @@
                        <div class="cbtn" id="next"></div>
                     </div>
                 </div>
-                <!-- end statistics chart -->
-
-                
-
             </div>
         </div>
     </div>
@@ -274,7 +273,7 @@
 
     <script type="text/javascript" src="js/Chart.js" ></script>
     <script src="js/theme.js"></script>
-	<script type="text/javascript" src="js/interface/index.js" ></script>
+	<script type="text/javascript" src="js/interface/teacherindex.js" ></script>
     <!--<script type="text/javascript">
         $(function () {
 

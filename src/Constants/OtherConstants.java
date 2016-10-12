@@ -5,13 +5,13 @@ package Constants;
  */
 public class OtherConstants {
     public static  String ip="";
-    public static String ROOTIP="http://"+ip+"/:8080/";
-    public static String getUrl(String url){
+   // public static String ROOTIP="http://"+ip+"/:8080/";
+    /*public static String getUrl(String url){
         return  ROOTIP+url;
-    }
+    }*/
 
     public static String  getStudentRegisterUrl(){
-        return "sturegister";
+        return "signup.html";
     }
 
     public static  String getSignCourse(){

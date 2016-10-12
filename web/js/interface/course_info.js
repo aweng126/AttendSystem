@@ -42,7 +42,8 @@ function allocationCourse(){
 	});
 	$("#allocate__course_id").on("change",function(){
 			var t = $(this).val();
-			var name = $("#allocate__course_id option[value=t]").attr('data-cname');
+			var name = $("#allocate__course_id option[value="+t+"]").attr('data-cname');
+			console.log(name);
 			$("#allocate_course_name").val(name);
 			$("#allocate_course_name").attr("readonly","true");
 		});
@@ -61,15 +62,15 @@ function allocationCourse(){
 	/*** 分配课程adminDistributeCourse*/
 	$("#allocation_course .submit_btn").on("click",function(){
 		 var teacher_val = $("#allocate_teacher").val();
-		 var teacher_id = $("#allocate_teacher option[value=teacher_val]").attr('data-cname');
+		 var teacher_id = $("#allocate_teacher option[value="+teacher_val+"]").attr('data-cname');
 		 
 		 
 		 var course_val = $("#allocate__course_id").val();
-		 var course_id =$("#allocate__course_id option[value=course_val]").attr('data-cname');
+		 var course_id =$("#allocate__course_id option[value="+course_val+"]").attr('data-cname');
 		 
 		 
 		 var room_val = $("#allocate_classroom_id").val();
-		 var room_id =$("#allocate_classroom_id option[value=teacher_val]").attr('data-cname');
+		 var room_id =$("#allocate_classroom_id option[value="+teacher_val+"]").attr('data-cname');
 		 
 		 
 		 var time_week =$("#allocate_class_weekday").val();

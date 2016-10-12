@@ -33,7 +33,7 @@ public class SSignCourseAction extends HttpServlet{
         if("".equals(stu_id)){
             Cookie cookie=new Cookie("from","sign");
             resp.addCookie(cookie);
-            resp.sendRedirect(OtherConstants.getUrl(OtherConstants.getStudentRegisterUrl()));
+            resp.sendRedirect(OtherConstants.getStudentRegisterUrl());
         }else {
 
             Student student=Student.getStudentById(stu_id);
@@ -41,17 +41,11 @@ public class SSignCourseAction extends HttpServlet{
             int j=Sign.save(student,course_id);
             resp.setCharacterEncoding("UTF-8");
             if(j==1){
-                resp.getWriter().write("1");
+                resp.sendRedirect("signSuccess.html");
             }else{
-                resp.getWriter().write("0");
+                resp.getWriter().write("签到失败");
             }
         }
     }
-
-/*    public static void main(String[] args) {
-        Student student=Student.getStudentById("0001");
-        int j=Sign.save(student,"0001");
-        System.out.println(j);
-    }*/
 
 }

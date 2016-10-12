@@ -29,24 +29,34 @@ public class SChooseCourseAction extends HttpServlet {
         String stu_id= CookieDetail.getStudentIdFromReq(req);
 
         System.out.println("SChooseCourse中 stu_id="+stu_id);
+
         //如果为空，就意味着之前没有登录过，这样的话就需要进入注册界面，注册然后将注册后的账号放到cookie中
         if("".equals(stu_id)){
+
             Cookie cookie=new Cookie("from","choose");
             resp.addCookie(cookie);
-        resp.sendRedirect(OtherConstants.getUrl(OtherConstants.getStudentRegisterUrl()));
+            System.out.println("跳转"+OtherConstants.getStudentRegisterUrl());
+            resp.addCookie(new Cookie("course_id",req.getParameter("course_id")));
+            resp.addCookie(new Cookie("room_id",req.getParameter("room_id")));
+            resp.addCookie(new Cookie("time_id",req.getParameter("time_id")));
+            resp.addCookie(new Cookie("acadyear_id",req.getParameter("acadyear_id")));
+
+
+            resp.sendRedirect(OtherConstants.getStudentRegisterUrl());
         }else {
             String course_id=req.getParameter("course_id");
             int    room_id=Integer.parseInt(req.getParameter("room_id"));
             int  time_id=Integer.parseInt(req.getParameter("time_id"));
-            int  acadyear_id=Integer.parseInt(req.getParameter("acadyear"));
+            int  acadyear_id=Integer.parseInt(req.getParameter("acadyear_id"));
 
             Takes takes=new Takes(stu_id,course_id,room_id,time_id,acadyear_id,0);
             int i=takes.save();
             resp.setCharacterEncoding("UTF-8");
             if(i==1){
-                resp.getWriter().write("1");
+                resp.getWriter().write("选课成功");
+                resp.sendRedirect("ChooseClassSuccess.html");
             }else {
-                resp.getWriter().write("0");
+                resp.getWriter().write("选课失败");
             }
         }
 

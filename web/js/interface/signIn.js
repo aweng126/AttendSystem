@@ -22,8 +22,6 @@ function Login(){
 		data:data_info,
 		success:function(data){
 
-			alert("sign in js success "+data)
-
 			if(data == 1){
 				window.location.href="teacherIndex.html";
 			}else if(data ==2){

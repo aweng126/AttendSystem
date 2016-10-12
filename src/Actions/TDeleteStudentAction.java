@@ -19,6 +19,8 @@ public class TDeleteStudentAction extends HttpServlet {
         String stu_id=req.getParameter("stu_id");
         String course_id=req.getParameter("course_id");
 
+        System.out.println("delete "+stu_id+"  "+course_id);
+
         int i = Takes.delete(stu_id,course_id);
         resp.setCharacterEncoding("UTF-8");
         if(i==1){
