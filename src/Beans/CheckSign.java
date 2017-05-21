@@ -5,6 +5,7 @@ import Utils.TimeUtils;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -124,6 +125,10 @@ public class CheckSign {
                 i++;
                 signlist.add(sign);
             }
+
+            Collections.reverse(signlist);
+
+
             //如果始终没有签到数据，那么就返回空数值
             if(i==1){
                 CheckSign sign=new CheckSign();

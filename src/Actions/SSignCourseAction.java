@@ -48,4 +48,11 @@ public class SSignCourseAction extends HttpServlet{
         }
     }
 
+
+    public static void main(String[] args) {
+
+        Student student=Student.getStudentById("0020");
+        int j=Sign.save(student,"0002");
+        System.out.println(j);
+    }
 }

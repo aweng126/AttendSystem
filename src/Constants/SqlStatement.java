@@ -69,7 +69,7 @@ public class SqlStatement {
     /**
      * 上课时间的搜索
      */
- public static final String COURSETIME_SEARCH = "select * from coursetime where time_week=? and time_order=?";
+ public static final String COURSETIME_SEARCH = "select * from coursetime where time_week=? and order_id=?";
 
 
     /**

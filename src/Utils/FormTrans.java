@@ -48,7 +48,7 @@ public class FormTrans {
     }
 
 
-    public static final String ip="121.250.222.14";
+    public static final String ip=" 211.87.229.91";
 
     /**
      * 将teaches的数据写入到StringReq中
